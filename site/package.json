@@ -4,7 +4,13 @@
   "description": "front end dnd master",
   "main": "index.js",
   "scripts": {
-    "run" : "react-scripts start"
+    "run" : "react-scripts start",
+    "build-css": "node-sass --include-path scss src/sass/index.scss   public/index.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jennie-quinton/dndmaster.git"
   },
   "keywords": [
     "dnd"
@@ -14,6 +20,12 @@
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "^1.1.4"
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.1.4",
+    "node-sass": "^4.8.3",
+    "nodemon": "^1.17.2"
   }
 }
