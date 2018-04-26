@@ -1,0 +1,46 @@
+@font-face {
+  font-family: AmesRegular;
+  src: url(/fonts/Ames-Regular.otf?f331d7366bfcc6a0a9b66519f3bce851);
+}
+
+@font-face {
+  font-family: BluefishRegular;
+  src: url(/fonts/Bluefish_Regular.otf?9f2d7de77c2b950713dbe93aaa259060);
+}
+
+@font-face {
+  font-family: LGC;
+  src: url(/fonts/Louis_George_Cafe.ttf?a617b62cd8089465865a37c676da00e2);
+}
+
+.header {
+  padding-top: 10px;
+  font-family: AmesRegular;
+}
+
+.header--left,
+.header--right {
+  display: inline-block;
+}
+
+.header--right {
+  float: right;
+}
+
+.header__nav {
+  border: 1px solid #000;
+  padding: 5px 7px;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: BluefishRegular;
+}
+
+.content {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+

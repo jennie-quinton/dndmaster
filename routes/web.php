@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/{url}', function ($url) {
+    return view('welcome');
+})->where(['url' => 'play|plan']);

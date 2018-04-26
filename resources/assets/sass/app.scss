@@ -1,3 +1,15 @@
 // Variables
-@import "variables";
+@import "utils/variables";
+@import "fonts/fonts";
+@import "utils/mixins";
 
+@import "components/header";
+
+body {
+    margin: 0;
+    font-family: BluefishRegular;
+}
+
+.content{
+    @include content();
+}
