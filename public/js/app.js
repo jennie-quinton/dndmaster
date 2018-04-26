@@ -36317,7 +36317,7 @@ var Main = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'h1',
                 null,
-                ' DND Master '
+                'DND Master'
             );
         }
     }]);

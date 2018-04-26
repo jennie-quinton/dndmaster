@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 export default class Main extends Component {
     render() {
         return (
-            <h1> DND Master </h1>
+            <h1>DND Master</h1>
         );
     }
 }
