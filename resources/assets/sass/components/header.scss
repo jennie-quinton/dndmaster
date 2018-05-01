@@ -1,42 +1,48 @@
 .header{
-    padding-top:20px;
-    padding-bottom:5px;
+    padding-top: 35px;
+    padding-bottom: 10px;
     font-family: AmesRegular;
     background-color: $primary-dark;
 
-    &__content{
-        @include content();
-
-        &:first-child{
-            border-top-left-radius: 4px; 
-        }
-        &:last-child{
-            border-top-right-radius: 4px;
-        }
-    
+    &__content{    
         &--left,
         &--right{
             display: inline-block;
         }
 
+        &--left{
+            margin-left: 60px;
+        }
+
         &--right{
-            float:right;
+            float: right;
+
+            @include mobile {
+            }
         }
     }
 
     &__nav{
         color: #fff;
-        border-left: 1px solid #000;
-        border-top: 1px solid #000;
-        padding: 4px 7px;
+        padding: 10px 15px;
         text-decoration: none;
+        background: $primary;
+        margin-right:5px;
 
         &:first-child{
-            border-top-left-radius: 4px; 
+            border-top-left-radius: 5px; 
         }
         &:last-child{
-            border-top-right-radius: 4px;
-            border-right: 1px solid #000;
+            border-top-right-radius: 5px;
+            margin-right: none;
         }
+    }
+
+    &__image{
+        height: 50px;
+        position: absolute;
+        top: 5px;
+        left: 3px;
+        clip: rect(0px,52px, 200px,0px);
     }
 }

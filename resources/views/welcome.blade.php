@@ -7,6 +7,7 @@
         <title>DND Master</title>
         <link href="{{mix('css/app.css')}}" rel="stylesheet" type="text/css">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="logo-thanks" content="http://logomakr.com">
     </head>
     <body>
         <div id="root"></div>
