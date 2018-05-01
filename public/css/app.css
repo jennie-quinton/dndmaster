@@ -70,7 +70,13 @@
   .nav__item--active {
     display: inline-block;
   }
+}
 
+.nav__item--active > a {
+  background-color: #892321;
+}
+
+@media (max-width: 480px) {
   .nav__item--active > a {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;

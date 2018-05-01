@@ -13,7 +13,12 @@
         &--active {
             @include mobile {
                 display: inline-block;
-                & > a{
+            }
+            
+            & > a {
+                background-color: $primary-darker;
+                
+                @include mobile {
                     border-top-left-radius: 5px; 
                     border-top-right-radius: 5px;
                 }
