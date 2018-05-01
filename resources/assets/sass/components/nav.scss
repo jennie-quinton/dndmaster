@@ -1,0 +1,50 @@
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+
+    &__item {
+        display: inline-block;
+        list-style: none;
+
+        @include mobile {
+            display: none;
+        }
+
+        &--active {
+            @include mobile {
+                display: inline-block;
+                & > a{
+                    border-top-left-radius: 5px; 
+                    border-top-right-radius: 5px;
+                }
+            }
+        }
+
+        &--user-controls {
+            @include mobile {
+                display: inline-block;
+            }
+        }
+
+        &--link{
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: $primary;
+            margin-right:5px;
+
+            @include tablet {
+                font-size: 12px;
+                padding-bottom: 11px;
+            }
+            
+            &-first {
+                border-top-left-radius: 5px; 
+            }
+    
+            &-last {
+                border-top-right-radius: 5px;
+            }
+        }
+    }
+}

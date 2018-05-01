@@ -1,44 +1,30 @@
-.header{
+.header {
     padding-top: 35px;
-    padding-bottom: 10px;
     font-family: AmesRegular;
     background-color: $primary-dark;
 
-    &__content{    
+    &__content {    
+        padding-bottom: 10px;
+        
         &--left,
-        &--right{
+        &--right {
             display: inline-block;
         }
 
-        &--left{
-            margin-left: 60px;
-        }
+        &--left {
+            margin-left: 75px;
 
-        &--right{
-            float: right;
-
-            @include mobile {
+            @include tablet {
+                margin-left: 60px;
             }
         }
-    }
 
-    &__nav{
-        color: #fff;
-        padding: 10px 15px;
-        text-decoration: none;
-        background: $primary;
-        margin-right:5px;
-
-        &:first-child{
-            border-top-left-radius: 5px; 
-        }
-        &:last-child{
-            border-top-right-radius: 5px;
-            margin-right: none;
+        &--right {
+            float: right;
         }
     }
 
-    &__image{
+    &__image {
         height: 50px;
         position: absolute;
         top: 5px;
