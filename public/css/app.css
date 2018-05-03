@@ -60,10 +60,6 @@
   list-style: none;
 }
 
-.nav__item--active {
-  background-color: #892321;
-}
-
 .nav__item--link,
 .nav__item--user-controls {
   color: #fff;
@@ -87,6 +83,10 @@
     font-size: 12px;
     padding-bottom: 11px;
   }
+}
+
+.nav__item--active {
+  background-color: #892321;
 }
 
 .nav__item--first {

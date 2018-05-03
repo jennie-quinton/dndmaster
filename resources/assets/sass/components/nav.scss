@@ -6,13 +6,13 @@
         display: inline-block;
         list-style: none;
         
-        &--active {            
-            background-color: $primary-darker;
-        }
-
         &--link,
         &--user-controls {
             @include navButton($primary); 
+        }
+
+        &--active {            
+            background-color: $primary-darker;
         }
 
         &--first {
