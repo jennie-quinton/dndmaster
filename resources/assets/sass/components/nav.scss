@@ -5,49 +5,37 @@
     &__item {
         display: inline-block;
         list-style: none;
-
-        @include mobile {
-            display: none;
+        
+        &--active {            
+            background-color: $primary-darker;
         }
 
-        &--active {
-            @include mobile {
-                display: inline-block;
-            }
-            
-            & > a {
-                background-color: $primary-darker;
-                
-                @include mobile {
-                    border-top-left-radius: 5px; 
-                    border-top-right-radius: 5px;
-                }
-            }
-        }
-
+        &--link,
         &--user-controls {
-            @include mobile {
-                display: inline-block;
-            }
+            @include navButton($primary); 
         }
 
-        &--link{
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 15px;
-            background-color: $primary;
-            margin-right:5px;
-
-            @include tablet {
-                font-size: 12px;
-                padding-bottom: 11px;
-            }
-            
-            &-first {
-                border-top-left-radius: 5px; 
-            }
+        &--first {
+            border-top-left-radius: 5px; 
+        }
     
-            &-last {
+        &--last {
+            border-top-right-radius: 5px;
+        }
+    }
+}
+
+@include mobile {
+    .nav{
+        &__item {
+
+            &--link {
+                display: none;
+            }
+
+            &--menu {
+                @include navButton($primary);
+                border-top-left-radius: 5px; 
                 border-top-right-radius: 5px;
             }
         }

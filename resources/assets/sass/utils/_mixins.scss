@@ -4,8 +4,32 @@
     margin-right: auto;
 }
 
+@mixin navButton($color) {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: $color;
+    margin-right: 5px; 
+
+    @include tablet {
+        font-size: 12px;
+        padding-bottom: 11px;
+    }
+
+    @include mobile {
+        font-size: 12px;
+        padding-bottom: 11px;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $tablet) {
+        @content;
+    }
+}
+
 @mixin tablet {
-    @media (max-width: $tablet) {
+    @media (max-width: $tablet) and  (min-width: $mobile) {
         @content;
     }
 }
