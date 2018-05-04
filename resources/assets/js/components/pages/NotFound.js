@@ -6,7 +6,7 @@ export function NotFound() {
         <div>
             <Header/>
             <div className="content">
-                <h1>NotFound</h1>
+                <h1>Not Found</h1>
             </div>
         </div>
     );
