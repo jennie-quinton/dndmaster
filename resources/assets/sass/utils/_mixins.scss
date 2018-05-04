@@ -10,6 +10,7 @@
     padding: 10px 15px;
     background-color: $color;
     margin-right: 5px; 
+    cursor: pointer;
 
     @include tablet {
         font-size: 12px;
@@ -20,6 +21,34 @@
         font-size: 12px;
         padding-bottom: 11px;
     }
+}
+
+@mixin dropDown($background-color, $font-size){
+    position: relative;
+        display: inline-block;
+
+        &--container{
+            display: none;
+            position: absolute;
+            background-color: $background-color;
+            min-width: 100px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: 10px;
+        }
+
+        &--link {
+            color: #000;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: $font-size;
+        }
+
+        &--show{
+            display: block
+        }   
 }
 
 @mixin desktop {

@@ -4,50 +4,54 @@ import Logo from '../../../../images/Logo_2.png';
 
 export default class Header extends Component{
     expandMenu(){
-        console.log('here');
+        document.getElementById('nav-drop-down').classList.toggle("nav__dropdown--show")
     }
 
     render () {
+        const links = ['Home', 'Plan', 'Play'];
         return (
             <div className="header">
                 <div className="header__content">
                     <img className="header__image" src={Logo} alt='logo'></img>
                     <div className="header__content--left">
-                        <ul className="nav">
-                            <li className="nav__item hidden__tablet hidden__desktop">
-                                <a className="nav__item--menu" onClick={this.expandMenu}> Menu </a>
-                            </li>
-                            <li className="nav__item" >
-                                <Link 
-                                    className={"nav__item--link nav__item--first" + (this.props.active == 'home' ? " nav__item--active" : '')} 
-                                    to="/">
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="nav__item" >
-                                <Link 
-                                    className={"nav__item--link" + (this.props.active == 'plan' ? " nav__item--active" : '')} 
-                                    to="/plan">
-                                    Plan
-                                </Link>
-                            </li>
-                            <li className="nav__item">
-                                <Link 
-                                    className={"nav__item--link nav__item--last" + (this.props.active == 'play' ? " nav__item--active" : '')} 
-                                    to="/play">
-                                    Play
-                                </Link>
-                            </li>
+                        <ul className="nav hidden__mobile">
+                            {links.map((item)=>{
+                                return (
+                                    <Link 
+                                        className={"nav__item--link"
+                                        + (this.props.active == item ? " nav__item--active" : '')} 
+                                        to={"/"+(item != 'Home' ? item : '')}>
+                                        {item}
+                                    </Link>
+                                );
+                            })}
+                        </ul>
+
+                        <ul className="nav nav__dropdown hidden__tablet hidden__desktop">
+                            <div className="nav__item">
+                                <a className="nav__item--link" onClick={this.expandMenu}> Menu </a>
+                            </div>
+                            <div id="nav-drop-down" className="nav__dropdown--container">
+                                {links.map((item)=>{
+                                    return(
+                                        <Link 
+                                            className="nav__dropdown--link"
+                                            to={"/"+(item != 'Home' ? item : '')}>
+                                            {item}
+                                        </Link>
+                                    );
+                                })}
+                            </div>
                         </ul>
                     </div>
                     <div className="header__content--right">
                         <ul className="nav">
-                            <li className="nav__item" >
-                                <Link className="nav__item--user-controls nav__item--first" to="/login">Login</Link>
-                            </li>
-                            <li className="nav__item">
-                                <Link className="nav__item--user-controls nav__item--last" to="/register">Register</Link>
-                            </li>
+                            {/* <li className="nav__item" > */}
+                                <Link className="nav__item--user-controls" to="/Login">Login</Link>
+                            {/* </li> */}
+                            {/* <li className="nav__item"> */}
+                                <Link className="nav__item--user-controls" to="/Register">Register</Link>
+                            {/* </li> */}
                         </ul>
                     </div>
                 </div>

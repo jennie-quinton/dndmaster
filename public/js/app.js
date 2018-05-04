@@ -268,11 +268,14 @@ var Header = function (_Component) {
     _createClass(Header, [{
         key: 'expandMenu',
         value: function expandMenu() {
-            console.log('here');
+            document.getElementById('nav-drop-down').classList.toggle("nav__dropdown--show");
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
+            var links = ['Home', 'Plan', 'Play'];
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'header' },
@@ -285,48 +288,41 @@ var Header = function (_Component) {
                         { className: 'header__content--left' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'ul',
-                            { className: 'nav' },
+                            { className: 'nav hidden__mobile' },
+                            links.map(function (item) {
+                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    {
+                                        className: "nav__item--link" + (_this2.props.active == item ? " nav__item--active" : ''),
+                                        to: "/" + (item != 'Home' ? item : '') },
+                                    item
+                                );
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'ul',
+                            { className: 'nav nav__dropdown hidden__tablet hidden__desktop' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav__item hidden__tablet hidden__desktop' },
+                                'div',
+                                { className: 'nav__item' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'a',
-                                    { className: 'nav__item--menu', onClick: this.expandMenu },
+                                    { className: 'nav__item--link', onClick: this.expandMenu },
                                     ' Menu '
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav__item' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    {
-                                        className: "nav__item--link nav__item--first" + (this.props.active == 'home' ? " nav__item--active" : ''),
-                                        to: '/' },
-                                    'Home'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav__item' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    {
-                                        className: "nav__item--link" + (this.props.active == 'plan' ? " nav__item--active" : ''),
-                                        to: '/plan' },
-                                    'Plan'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav__item' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    {
-                                        className: "nav__item--link nav__item--last" + (this.props.active == 'play' ? " nav__item--active" : ''),
-                                        to: '/play' },
-                                    'Play'
-                                )
+                                'div',
+                                { id: 'nav-drop-down', className: 'nav__dropdown--container' },
+                                links.map(function (item) {
+                                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                        {
+                                            className: 'nav__dropdown--link',
+                                            to: "/" + (item != 'Home' ? item : '') },
+                                        item
+                                    );
+                                })
                             )
                         )
                     ),
@@ -337,22 +333,14 @@ var Header = function (_Component) {
                             'ul',
                             { className: 'nav' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav__item' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { className: 'nav__item--user-controls nav__item--first', to: '/login' },
-                                    'Login'
-                                )
+                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                { className: 'nav__item--user-controls', to: '/Login' },
+                                'Login'
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav__item' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { className: 'nav__item--user-controls nav__item--last', to: '/register' },
-                                    'Register'
-                                )
+                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                { className: 'nav__item--user-controls', to: '/Register' },
+                                'Register'
                             )
                         )
                     )
@@ -2074,10 +2062,10 @@ var Main = function (_Component) {
                         __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Switch */],
                         null,
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_2__pages__["a" /* Home */] }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/plan', component: __WEBPACK_IMPORTED_MODULE_2__pages__["d" /* Plan */] }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/play', component: __WEBPACK_IMPORTED_MODULE_2__pages__["e" /* Play */] }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_2__pages__["b" /* Login */] }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_2__pages__["f" /* Register */] }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/Plan', component: __WEBPACK_IMPORTED_MODULE_2__pages__["d" /* Plan */] }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/Play', component: __WEBPACK_IMPORTED_MODULE_2__pages__["e" /* Play */] }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/Login', component: __WEBPACK_IMPORTED_MODULE_2__pages__["b" /* Login */] }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/Register', component: __WEBPACK_IMPORTED_MODULE_2__pages__["f" /* Register */] }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { component: __WEBPACK_IMPORTED_MODULE_2__pages__["c" /* NotFound */] })
                     )
                 )
@@ -20669,7 +20657,7 @@ function Home() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'home' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'Home' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'content' },
@@ -24290,7 +24278,7 @@ function Plan() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'plan' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'Plan' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'content' },
@@ -24319,7 +24307,7 @@ function Play() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'play' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'Play' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'content' },
