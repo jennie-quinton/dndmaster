@@ -354,7 +354,7 @@ var Header = function (_Component) {
     return Header;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Header);
+/* unused harmony default export */ var _unused_webpack_default_export = (Header);
 
 /***/ }),
 /* 5 */
@@ -20649,10 +20649,10 @@ module.exports = camelize;
 
 
 function Home() {
+    document.getElementById('home-link').classList.add('nav__item--active');
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'Home' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'content' },
@@ -24270,10 +24270,10 @@ module.exports = "/images/Logo_2.png?0b4b1a959ca104d169b18b63d4651e47";
 
 
 function Plan() {
+    document.getElementById('plan-link').classList.add('nav__item--active');
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'Plan' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'content' },
@@ -24299,10 +24299,10 @@ function Plan() {
 
 
 function Play() {
+    document.getElementById('play-link').classList.add('nav__item--active');
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], { active: 'Play' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'content' },
@@ -24331,7 +24331,6 @@ function NotFound() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__core_Header__["a" /* default */], null),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'content' },

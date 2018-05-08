@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -13,4 +13,11 @@
         <div id="root"></div>
         <script src="{{mix('js/app.js')}}" ></script>
     </body>
-</html>
+</html> -->
+
+@extends('layouts.app')
+
+@section('content')
+    <div id="root"></div>
+    <script src="{{mix('js/app.js')}}" ></script>
+@endsection

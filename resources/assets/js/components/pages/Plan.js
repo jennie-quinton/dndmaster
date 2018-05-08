@@ -2,9 +2,9 @@ import React from 'react';
 import Header from '../core/Header';
 
 export function Plan() {
+    document.getElementById('plan-link').classList.add('nav__item--active');
     return (
         <div>
-            <Header active="Plan"/>
             <div className="content">
                 <h1>Plan</h1>
             </div>
