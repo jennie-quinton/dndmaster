@@ -38,6 +38,12 @@
   }
 }
 
+@media (max-width: 480px) {
+  .header__content--left {
+    margin-left: 60px;
+  }
+}
+
 .header__content--right {
   float: right;
 }
@@ -117,6 +123,10 @@
 
 .nav__dropdown--show {
   display: block;
+}
+
+.nav__dropdown--right {
+  right: 5px;
 }
 
 @media (max-width: 480px) {

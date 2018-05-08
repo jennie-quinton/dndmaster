@@ -17,6 +17,10 @@
             @include tablet {
                 margin-left: 60px;
             }
+        
+            @include mobile {
+                margin-left: 60px;
+            }
         }
 
         &--right {

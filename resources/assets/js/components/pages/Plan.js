@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../core/Header';
 
 export function Plan() {
     document.getElementById('plan-link').classList.add('nav__item--active');

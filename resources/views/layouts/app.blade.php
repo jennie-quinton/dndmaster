@@ -13,11 +13,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-
     <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <meta name="logo-thanks" content="http://logomakr.com">
@@ -41,9 +38,9 @@
                     </ul>
                     <ul class="nav nav__dropdown hidden__tablet hidden__desktop">
                         <div class="nav__item">
-                            <a class="nav__item--link" onclick="this.expandMenu()"> Menu </a>
+                            <a class="nav__item--link" onclick="document.getElementById('nav-dropdown').classList.toggle('nav__dropdown--show')"> Menu </a>
                         </div>
-                        <div id="nav-drop-down" class="nav__dropdown--container">
+                        <div id="nav-dropdown" class="nav__dropdown--container">
                             <a class="nav__dropdown--link" href="/">
                                 Home
                             </a>
@@ -57,39 +54,35 @@
                     </ul>
                 </div>
                 <div class="header__content--right">
-                    <ul class="nav">
-                        @guest
+                    @guest
+                        <ul class="nav">
                             <a class="nav__item--link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             <a class="nav__item--link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        @else
-                            <li class="nav__dropdown--container">
-                                <a class="nav__dropdown--link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                        </ul>
+                    @else
+                        <ul class="nav nav__dropdown">
+                            <div class="nav__item">
+                                <a class="nav__item--link" onclick="document.getElementById('user-dropdown').classList.toggle('nav__dropdown--show')">
+                                    <i class="fa fa-user"></i> {{ Auth::user()->name }}
+                                </a>
+                            </div>
+                            <div id="user-dropdown" class="nav__dropdown--container nav__dropdown--right">
+                                <a class="nav__dropdown--link" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
 
-                                <div>
-                                    <a class="nav__dropdown--link" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </ul>
+                    @endguest
                 </div>
             </div>
         </div>
         @yield('content')
     </div>
-    <script>
-    expandMenu(){
-        document.getElementById('nav-drop-down').classList.toggle("nav__dropdown--show")
-    }
-    </script>
 </body>
 </html>

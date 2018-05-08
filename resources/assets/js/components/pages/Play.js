@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../core/Header';
 
 export function Play() {
     document.getElementById('play-link').classList.add('nav__item--active');
