@@ -52,13 +52,13 @@
 }
 
 @mixin desktop {
-    @media (min-width: $tablet) {
+    @media (min-width: $desktop) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media (max-width: $tablet) and  (min-width: $mobile) {
+    @media (max-width: $tablet-max) and  (min-width: $tablet-min) {
         @content;
     }
 }

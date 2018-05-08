@@ -19,14 +19,14 @@ export default class Header extends Component{
                                 return (
                                     <Link 
                                         className={"nav__item--link"
-                                        + (this.props.active == item ? " nav__item--active" : '')} 
+                                        + (this.props.active == item ? " nav__item--active" : '')}
+                                        key={item} 
                                         to={"/"+(item != 'Home' ? item : '')}>
                                         {item}
                                     </Link>
                                 );
                             })}
                         </ul>
-
                         <ul className="nav nav__dropdown hidden__tablet hidden__desktop">
                             <div className="nav__item">
                                 <a className="nav__item--link" onClick={this.expandMenu}> Menu </a>
@@ -36,6 +36,7 @@ export default class Header extends Component{
                                     return(
                                         <Link 
                                             className="nav__dropdown--link"
+                                            key={item} 
                                             to={"/"+(item != 'Home' ? item : '')}>
                                             {item}
                                         </Link>
@@ -46,12 +47,8 @@ export default class Header extends Component{
                     </div>
                     <div className="header__content--right">
                         <ul className="nav">
-                            {/* <li className="nav__item" > */}
-                                <Link className="nav__item--user-controls" to="/Login">Login</Link>
-                            {/* </li> */}
-                            {/* <li className="nav__item"> */}
-                                <Link className="nav__item--user-controls" to="/Register">Register</Link>
-                            {/* </li> */}
+                            <a className="nav__item--link" href="/login">Login</a>
+                            <a className="nav__item--link" href="/register">Register</a>
                         </ul>
                     </div>
                 </div>

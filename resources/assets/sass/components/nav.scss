@@ -3,8 +3,7 @@
     margin-bottom: 0;
 
     &__item {
-        &--link,
-        &--user-controls {
+        &--link {
             @include navButton($primary); 
 
             &:first-child {

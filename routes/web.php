@@ -11,6 +11,11 @@
 |
 */
 
+Auth::routes();
+
+Route::get('/auth', 'HomeController@index')->name('home');
+
 Route::any('{query}', function() { 
     return view('welcome');
 })->where('query', '.*');
+
