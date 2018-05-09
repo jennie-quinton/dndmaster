@@ -1878,17 +1878,13 @@ var Main = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["a" /* BrowserRouter */],
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
+                    __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Switch */],
                     null,
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Switch */],
-                        null,
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_2__pages__["a" /* Home */] }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { path: '/home', component: __WEBPACK_IMPORTED_MODULE_2__pages__["a" /* Home */] }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { path: '/plan', component: __WEBPACK_IMPORTED_MODULE_2__pages__["c" /* Plan */] }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { path: '/play', component: __WEBPACK_IMPORTED_MODULE_2__pages__["d" /* Play */] }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { component: __WEBPACK_IMPORTED_MODULE_2__pages__["b" /* NotFound */] })
-                    )
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_2__pages__["a" /* Home */] }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { path: '/home', component: __WEBPACK_IMPORTED_MODULE_2__pages__["a" /* Home */] }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { path: '/plan', component: __WEBPACK_IMPORTED_MODULE_2__pages__["c" /* Plan */] }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { path: '/play', component: __WEBPACK_IMPORTED_MODULE_2__pages__["d" /* Play */] }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["b" /* Route */], { component: __WEBPACK_IMPORTED_MODULE_2__pages__["b" /* NotFound */] })
                 )
             );
         }
@@ -20471,14 +20467,31 @@ function Home() {
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        null,
+        { className: 'content' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h1',
+            null,
+            'Welcome to DND Master'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'p',
+            null,
+            'The site which helps you build your DND campaign and helps you run a session.'
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'content' },
+            null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'h1',
+                'div',
                 null,
-                'DND Master'
+                'Plan',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-book' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                null,
+                'Play',
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-play' })
             )
         )
     );

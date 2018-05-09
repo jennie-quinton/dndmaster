@@ -3,7 +3,7 @@
 @section('content')
 <div class="content">
     <div class="content__form">
-        <h2 >{{ __('Reset Password') }}</h2>
+        <h1>{{ __('Reset Password') }}</h1>
         @if (session('status'))
             <div>
                 {{ session('status') }}

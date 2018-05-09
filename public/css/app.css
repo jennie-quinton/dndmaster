@@ -1,16 +1,6 @@
-@font-face {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@font-face {
   font-family: Ames;
   src: url(/fonts/Ames-Regular.otf?f331d7366bfcc6a0a9b66519f3bce851);
-}
-
-@font-face {
-  font-family: Bluefish;
-  src: url(/fonts/Bluefish_Regular.otf?9f2d7de77c2b950713dbe93aaa259060);
-}
-
-@font-face {
-  font-family: LGC;
-  src: url(/fonts/Louis_George_Cafe.ttf?a617b62cd8089465865a37c676da00e2);
 }
 
 .header {
@@ -207,6 +197,7 @@
   border-radius: 5px;
   border: none;
   font-size: 16px;
+  font-family: 'Nunito', sans-serif;
 }
 
 @media (max-width: 767px) and (min-width: 481px) {
@@ -230,7 +221,7 @@
 
 body {
   margin: 0;
-  font-family: LGC;
+  font-family: 'Nunito', sans-serif;
 }
 
 .content {

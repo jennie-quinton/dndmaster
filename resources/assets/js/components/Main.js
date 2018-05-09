@@ -7,7 +7,6 @@ export default class Main extends Component {
     render() {
         return (
             <Router>
-                <div>
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/home" component={Home} />
@@ -15,7 +14,6 @@ export default class Main extends Component {
                         <Route path="/play" component={Play} />
                         <Route component={NotFound} />
                     </Switch>
-                </div>
             </Router>
         );
     }
