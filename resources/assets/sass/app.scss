@@ -15,4 +15,12 @@ body {
 
 .content{
     @include content();
+    margin-top: 20px;
+
+    &__form{
+        @include content(50%);
+        background: $primary-dark;
+        color: #fff;
+        padding: 10px 20px;
+    }
 }

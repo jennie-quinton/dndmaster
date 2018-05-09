@@ -1,7 +1,31 @@
-.form{
-    &__button{
-        @include button($primary);
-        border-radius: 5px;
-        border: none;
+.form {
+    &__row {
+        margin-bottom: 15px;
+
+        &--label{
+            font-size: 14px;
+        }
+
+        &--input {
+            width: 100%;
+            font-size: 16px;
+        }
+    }
+
+    &__submit {
+        margin-bottom: 30px;
+        margin-top: 30px;
+    
+        &--button{
+            @include button($primary);
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+    }
+
+    &__link {
+        color: #fff;
+        font-size: 14px;
     }
 }
