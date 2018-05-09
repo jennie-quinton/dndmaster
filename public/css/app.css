@@ -219,6 +219,14 @@
   margin-bottom: 5px;
 }
 
+.panel {
+  display: inline-block;
+}
+
+.panel__icon {
+  font-size: 12em;
+}
+
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;
