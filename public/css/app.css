@@ -1,10 +1,10 @@
 @font-face {
-  font-family: AmesRegular;
+  font-family: Ames;
   src: url(/fonts/Ames-Regular.otf?f331d7366bfcc6a0a9b66519f3bce851);
 }
 
 @font-face {
-  font-family: BluefishRegular;
+  font-family: Bluefish;
   src: url(/fonts/Bluefish_Regular.otf?9f2d7de77c2b950713dbe93aaa259060);
 }
 
@@ -15,7 +15,7 @@
 
 .header {
   padding-top: 35px;
-  font-family: AmesRegular;
+  font-family: Ames;
   background-color: #4b1312;
 }
 
@@ -66,20 +66,30 @@
   text-decoration: none;
   padding: 10px 15px;
   background-color: #b22d2b;
-  margin-right: 5px;
   cursor: pointer;
+  margin-right: 5px;
 }
 
 @media (max-width: 767px) and (min-width: 481px) {
   .nav__item--link {
     font-size: 12px;
-    padding-bottom: 11px;
   }
 }
 
 @media (max-width: 480px) {
   .nav__item--link {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 481px) {
+  .nav__item--link {
+    padding-bottom: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__item--link {
     padding-bottom: 11px;
   }
 }
@@ -151,6 +161,28 @@
 @media (max-width: 480px) {
   .hidden__mobile {
     display: none;
+  }
+}
+
+.form__button {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #b22d2b;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+@media (max-width: 767px) and (min-width: 481px) {
+  .form__button {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form__button {
+    font-size: 12px;
   }
 }
 

@@ -1,0 +1,7 @@
+.form{
+    &__button{
+        @include button($primary);
+        border-radius: 5px;
+        border: none;
+    }
+}

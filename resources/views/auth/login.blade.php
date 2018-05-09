@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="content">
-    <div >
-        <div >{{ __('Login') }}</div>
-
+    <div>
+        <h2>{{ __('Login') }}</h2>
         <div >
             <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -49,7 +48,7 @@
 
                 <div >
                     <div >
-                        <button type="submit" >
+                        <button class="form__button" type="submit" >
                             {{ __('Login') }}
                         </button>
 
