@@ -168,13 +168,29 @@
   margin-bottom: 15px;
 }
 
-.form__row--label {
+.form__label {
   font-size: 14px;
 }
 
-.form__row--input {
+.form__input {
   width: 100%;
   font-size: 16px;
+  outline: none;
+}
+
+.form__input--error {
+  outline-color: #b22d2b;
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}
+
+.form__error {
+  background-color: #b22d2b;
+  width: 100%;
+  margin-top: 5px;
+  padding: 2px 2px 2px 4px;
+  font-size: 14px;
 }
 
 .form__submit {
@@ -208,6 +224,8 @@
 .form__link {
   color: #fff;
   font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 body {
@@ -226,6 +244,7 @@ body {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  border: #b22d2b 5px solid;
   background: #4b1312;
   color: #fff;
   padding: 10px 20px;

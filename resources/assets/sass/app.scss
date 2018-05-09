@@ -19,6 +19,7 @@ body {
 
     &__form{
         @include content(50%);
+        border: $primary 5px solid;
         background: $primary-dark;
         color: #fff;
         padding: 10px 20px;

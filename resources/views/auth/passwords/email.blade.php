@@ -13,13 +13,13 @@
         <form class="form" method="POST" action="{{ route('password.email') }}">
             @csrf
             <div class="form__row">
-                <label class="form__row--label" for="email" >{{ __('E-Mail Address') }}</label>
-                <input class="form__row--input"id="email" type="email" class="{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                <label class="form__label" for="email" >{{ __('E-Mail Address') }}</label>
+                <input class="form__input {{ $errors->has('email') ? 'form__input--error' : '' }}"id="email" type="email" name="email" value="{{ old('email') }}" required>
 
                 @if ($errors->has('email'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
+                    <div class="form__error">
+                        {{ $errors->first('email') }}
+                    </div>
                 @endif
             </div>
 
