@@ -221,10 +221,27 @@
 
 .panel {
   display: inline-block;
+  text-align: center;
+  background-color: #b22d2b;
+  border: #4b1312 5px solid;
+  padding-bottom: 20px;
+}
+
+.panel__title {
+  color: #fff;
+  text-decoration: none;
 }
 
 .panel__icon {
   font-size: 12em;
+  color: #fff;
+}
+
+.grid__2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  -webkit-column-gap: 25px;
+          column-gap: 25px;
 }
 
 body {

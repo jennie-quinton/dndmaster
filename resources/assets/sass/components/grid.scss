@@ -1,0 +1,7 @@
+.grid {
+    &__2 {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 25px;
+    }
+}

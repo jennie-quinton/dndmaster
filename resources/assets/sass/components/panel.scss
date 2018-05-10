@@ -1,7 +1,17 @@
 .panel{
     display: inline-block;
+    text-align: center;
+    background-color: $primary;
+    border: $primary-dark 5px solid;
+    padding-bottom: 20px;
+
+    &__title{
+        color: #fff;
+        text-decoration: none;
+    }
     
     &__icon{
         font-size: 12em;
+        color: #fff;
     }
 }
