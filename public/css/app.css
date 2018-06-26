@@ -225,11 +225,15 @@
   background-color: #b22d2b;
   border: #4b1312 5px solid;
   padding-bottom: 20px;
+  text-decoration: none;
+}
+
+.panel:hover {
+  background: #892321;
 }
 
 .panel__title {
   color: #fff;
-  text-decoration: none;
 }
 
 .panel__icon {

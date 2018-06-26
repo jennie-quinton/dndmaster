@@ -22,7 +22,5 @@ To run the machiene:
 The domain for the site is:
 ```http://dndmaster.local/```
 
-To compile react:
+To compile react and sass whilst developing:
 ```npm run watch```
-
-To compile sass:
