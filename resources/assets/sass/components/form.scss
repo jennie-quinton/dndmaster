@@ -38,6 +38,10 @@
             border: none;
             font-size: 16px;
             font-family: 'Nunito', sans-serif;
+
+            &:hover{
+                background: $primary-light;
+            }
         }
     }
 

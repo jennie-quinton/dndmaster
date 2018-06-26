@@ -212,6 +212,10 @@
   }
 }
 
+.form__submit--button:hover {
+  background: #e07e7d;
+}
+
 .form__link {
   color: #fff;
   font-size: 14px;
@@ -265,7 +269,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   border: #b22d2b 5px solid;
-  background: #4b1312;
+  background: #892321;
   color: #fff;
   padding: 10px 20px;
 }
