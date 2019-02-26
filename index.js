@@ -14,16 +14,15 @@ app.use(bodyParser.json());
 require('./routes/characterRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
-  // TODO: Jen tell me where are you compiling this into
   // Express will serve up production assets
   // like our main.js file, main.css file
-  // app.use(express.static('client/build'));
+  app.use(express.static('client/out'));
   // Express will serve up the index.html file
   // if it doesn't recognize the route
-  // const path = require('path');
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  // });
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'out', 'index.html'));
+  });
 }
 
 const PORT = process.env.PORT || 5000;
