@@ -7,9 +7,6 @@ module.exports = withSass({
     importLoaders: 1,
     localIdentName: "[local]_[hash:base64:5]",
   },
-  sassLoaderOptions: {
-    includePaths: ["./utils/sass/variables.scss"]
-  },
   webpack (config, options) {
     config.resolve.alias['components'] = path.join(__dirname, 'components')
     config.resolve.alias['containers'] = path.join(__dirname, 'containers')
