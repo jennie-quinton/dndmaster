@@ -8,6 +8,9 @@
     "npm": "5.6.0"
   },
   "scripts": {
+    "dev": "concurrently \"next\" \"npm run server\"",
+    "build": "next build",
+    "start": "node index.js",
     "server": "nodemon index.js"
   },
   "repository": {
@@ -21,10 +24,16 @@
   },
   "homepage": "https://github.com/jennie-quinton/dndmaster#readme",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "mongoose": "^5.4.15",
-    "nodemon": "^1.18.10"
+    "next": "^8.0.3",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "redux": "^4.0.1"
   }
 }

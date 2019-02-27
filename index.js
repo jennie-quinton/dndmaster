@@ -2,29 +2,39 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+const next = require('next');
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
 require('./models/Character');
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
-const app = express();
+const server = express();
 
-app.use(bodyParser.json());
+server.use(bodyParser.json());
 
-require('./routes/characterRoutes')(app);
-
-if (process.env.NODE_ENV === 'production') {
-  // TODO: Jen tell me where are you compiling this into
-  // Express will serve up production assets
-  // like our main.js file, main.css file
-  // app.use(express.static('client/build'));
-  // Express will serve up the index.html file
-  // if it doesn't recognize the route
-  // const path = require('path');
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  // });
-}
+require('./routes/characterRoutes')(server);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+
+if (process.env.NODE_ENV === 'production') {
+  app
+    .prepare()
+    .then(() => {
+      // Next will serve up all the assets
+      server.get('*', (req, res) => handle(req, res));
+      server.listen(PORT, () => {
+        console.log(`Listening on port`, PORT);
+      });
+    })
+    .catch(error => {
+      console.error(error.stack);
+      process.exit(1);
+    });
+} else {
+  server.listen(PORT, () => {
+    console.log(`Dev environment listening on port`, PORT);
+  });
+}

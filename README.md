@@ -10,20 +10,21 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-These are the the things you need to install the environment and how to install them
-
 - Node: 8.11.1
 - Dev Keys: Can be requested from Jordan
 
 ### Installing
 
-```
+```bash
 npm install
 ```
 
 ### Running environment
 
-```
-# To start server
+```bash
+# Runs react app (with client side hot-reloading and auto reloads the api server)
+npm run dev
+
+# Runs react app on the server and starts apis (no client side hot-reloading)
 npm run server
 ```
