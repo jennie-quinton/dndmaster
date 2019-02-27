@@ -1,10 +1,5 @@
 node_modules/*
 config/dev.js
-<<<<<<< Updated upstream
-/client/.next
-/client/package-lock.json
-=======
 .next
 out
 package-lock.json
->>>>>>> Stashed changes
