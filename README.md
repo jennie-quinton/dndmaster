@@ -22,9 +22,9 @@ npm install
 ### Running environment
 
 ```bash
-# Runs react app (with client side hot-reloading and auto reloads the api server)
+# Runs react app server and apis (with client side hot-reloading and auto reloads the api server)
 npm run dev
 
-# Runs react app on the server and starts apis (no client side hot-reloading)
+# Runs the server for the apis (auto reloads the api server)
 npm run server
 ```
