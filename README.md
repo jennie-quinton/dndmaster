@@ -38,3 +38,10 @@ $ npm run build:prod
 ```
 
 This will create the index.html file in the `client/dist` folder.
+
+To run the client locally run
+
+```
+$ cd client
+$ npm run dev
+```

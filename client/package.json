@@ -4,7 +4,7 @@
   "description": "The idea for this app is to build components a dnd master can use to plan and play in a campaign.",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --mode=development",
+    "dev": "BASENAME=localhost webpack-dev-server --devtool eval --config  webpack.config.js --progress --colors --hot",
     "build:prod": "webpack --mode=production"
   },
   "repository": {
@@ -27,7 +27,8 @@
     "redux": "^4.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.5"
+    "webpack": "^4.29.5",
+    "webpack-dev-server": "^3.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
