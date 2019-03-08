@@ -34,7 +34,7 @@ To create the index.html file for production run
 
 ```
 $ cd client
-$ npm run build:prod
+$ npm run build
 ```
 
 This will create the index.html file in the `client/dist` folder.
