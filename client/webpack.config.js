@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './pages/index.js',
@@ -22,31 +23,24 @@ module.exports = {
       {
         test:/\.scss$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-          // {
-          //   loader: MiniCssExtractPlugin.loader,
-          // },
-          // {
-          //   use: [{
-          //     fallback: 'style-loader',
-          //     use: [{
-          //       loader: 'css-loader',
-          //       options: {
-          //         modules: true,
-          //         importLoaders: true,
-          //         localIdentName: '[folder]_[local]_[hash:base64:5]',
-          //         sourceMap: true,
-          //       },
-          //     }, {
-          //       loader: 'sass-loader',
-          //       options: {
-          //         sourceMap: true,
-          //       },
-          //     }],
-          //   }],
-          // }
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: true,
+              localIdentName: '[folder]_[local]_[hash:base64:5]',
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            }
+          }
         ],
       },
       {
@@ -67,12 +61,13 @@ module.exports = {
     },
   },
   plugins: [
-    new HtmlWebpackPlugin()
-    // new MiniCssExtractPlugin()
+    new HtmlWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename:'index.css'
+    })
     // new webpack.DefinePlugin({
     //   'process.env': {}
     // }),
-    // new ExtractTextPlugin('index_styles.css'),
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'common',
     //   filename: 'common.js',
