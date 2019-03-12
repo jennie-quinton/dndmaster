@@ -72,6 +72,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {}
     }),
+    // To add when have bundles instead of one entry point
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: 'common',
     //   filename: 'common.js',
