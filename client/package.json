@@ -4,11 +4,8 @@
   "description": "The idea for this app is to build components a dnd master can use to plan and play in a campaign.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "dev": "BASENAME=localhost webpack-dev-server --devtool eval --config  webpack.config.js --progress --colors --hot",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -21,11 +18,23 @@
   },
   "homepage": "https://github.com/jennie-quinton/dndmaster#readme",
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
-    "next": "^8.0.3",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }

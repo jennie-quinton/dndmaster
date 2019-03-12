@@ -4,3 +4,4 @@ config/dev.js
 /client/.next
 /client/out
 /client/package-lock.json
+/client/dist

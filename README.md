@@ -27,3 +27,21 @@ npm install
 # To start server
 npm run server
 ```
+
+### Client
+
+To create the index.html file for production run
+
+```
+$ cd client
+$ npm run build
+```
+
+This will create the index.html file in the `client/dist` folder.
+
+To run the client locally run
+
+```
+$ cd client
+$ npm run dev
+```
