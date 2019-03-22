@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import CreateCharacterWidget from '../containers/createCharacterWidget';
+import MenuBar from '../components/menuBar';
 import { addCharacter } from '../actions/characterActions';
-
-import CreateCharacterWidget from 'containers/createCharacterWidget';
-import MenuBar from 'components/menuBar';
 
 class Home extends Component {
   componentDidMount() {
@@ -14,21 +13,19 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <MenuBar/>
-        <CreateCharacterWidget />
+        <MenuBar />
+        <div>
+          <CreateCharacterWidget />
+        </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = (state ) => {
-  return {};
-}
+const mapStateToProps = () => {};
 
-const mapDispatchToProps = (dispatch)=> {
-  return {
-    getInitialCharacter: () => dispatch(addCharacter()),
-  }
-};
+const mapDispatchToProps = dispatch => ({
+  getInitialCharacter: () => dispatch(addCharacter()),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

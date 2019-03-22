@@ -7,7 +7,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
+    filename: 'index.js',
   },
   module: {
     rules: [
@@ -15,20 +15,20 @@ module.exports = {
       {
         test: /\.mjs$/,
         include: /node_modules/,
-        type: 'javascript/auto'
+        type: 'javascript/auto',
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
-        test:/\.scss$/,
+        test: /\.scss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -46,26 +46,26 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-            }
-          }
+            },
+          },
         ],
       },
       {
         test: /\.css$/,
         use: [
-          "style-loader",
-          "css-loader"
-        ]
-      }
-    ]
+          'style-loader',
+          'css-loader',
+        ],
+      },
+    ],
   },
   resolve: {
     // mjs needed for graphql
     extensions: ['.mjs', '.js'],
     alias: {
-      'components': path.join(__dirname, 'components'),
-      'containers': path.join(__dirname, 'containers'),
-      'sass': path.join(__dirname, 'sass'),
+      components: path.join(__dirname, 'components'),
+      containers: path.join(__dirname, 'containers'),
+      sass: path.join(__dirname, 'sass'),
     },
   },
   plugins: [
@@ -74,10 +74,10 @@ module.exports = {
       filename: 'index.html',
     }),
     new MiniCssExtractPlugin({
-      filename:'index.css'
+      filename: 'index.css',
     }),
     new webpack.DefinePlugin({
-      'process.env': {}
+      'process.env': {},
     }),
     // To add when have bundles instead of one entry point
     // new webpack.optimize.CommonsChunkPlugin({

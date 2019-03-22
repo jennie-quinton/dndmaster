@@ -1,41 +1,43 @@
-import {graphql} from 'graphql';
+import { graphql } from 'graphql';
 
-var root = {
+const root = {
   name: 'Mikely Gregor',
   race: 'Human',
   class: 'Monk',
 };
 
-const graphQL = (store) => (next) => (action) => {
-  const {schema, query} = action;
+const graphQL = store => next => (action) => {
+  const { schema, query } = action;
 
-  if(!query) return next(action);
+  if (!query) return next(action);
 
-  next({type: `${action.type}_REQUEST`});
+  next({ type: `${action.type}_REQUEST` });
 
-  graphql(schema, query, root)
+  return graphql(schema, query, root)
     .then((response) => {
       if (response.data) {
-        next({
+        return next({
           type: `${action.type}_SUCCESS`,
           ...response,
-        })
+        });
       }
 
       if (response.errors) {
-        next({
+        return next({
           type: `${action.type}_FAILURE`,
-          error: {...response.errors},
-        })
+          error: { ...response.errors },
+        });
       }
+
+      return Promise.resolve();
     })
-    .catch((error)=>{
-      console.error(error);
-      next({
+    .catch((error) => {
+      console.error(error); // eslint-disable-line no-console
+      return next({
         type: `${action.type}_FAILURE`,
         error,
-      })
-    })
-}
+      });
+    });
+};
 
 export default graphQL;

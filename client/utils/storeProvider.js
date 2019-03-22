@@ -5,7 +5,7 @@ import graphQL from '../middleware/graphQL';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(
-  applyMiddleware(graphQL,thunk),
+  applyMiddleware(graphQL, thunk),
 ));
 
 export default store;
