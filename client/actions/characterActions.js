@@ -1,12 +1,11 @@
+import characterSchema from './schemas/characterSchema'
+
 const addCharacter = () => (dispatch) => {
   return dispatch({
     type: 'CREATE_CHARACTER',
-    data: {
-      name: 'Mikely Gregor',
-      race: 'Human',
-      class: 'Monk',
-    }
-  })
+    schema: characterSchema,
+    query: '{ name, race, class }'
+  });
 }
 
 export {
