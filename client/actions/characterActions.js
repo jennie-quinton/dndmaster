@@ -1,9 +1,9 @@
-import characterSchema from './schemas/characterSchema';
+import CharacterType from './schemas/characterSchema';
 
 const addCharacter = () => dispatch => dispatch({
   type: 'CREATE_CHARACTER',
-  schema: characterSchema,
-  query: '{ name, race, class }',
+  schemaType: CharacterType,
+  query: '{ id, name, race, class }',
 });
 
 export {

@@ -1,17 +1,22 @@
-import { graphql } from 'graphql';
+import { graphql, GraphQLSchema } from 'graphql';
 
 const root = {
+  id: 1,
   name: 'Mikely Gregor',
   race: 'Human',
   class: 'Monk',
 };
 
 const graphQL = store => next => (action) => {
-  const { schema, query } = action;
+  const { schemaType, query } = action;
 
   if (!query) return next(action);
 
   next({ type: `${action.type}_REQUEST` });
+
+  const schema = new GraphQLSchema({
+    query: schemaType,
+  });
 
   return graphql(schema, query, root)
     .then((response) => {

@@ -1,11 +1,13 @@
-import { buildSchema } from 'graphql';
+import { GraphQLInt, GraphQLObjectType, GraphQLString } from 'graphql';
 
-const schema = buildSchema(`
-  type Query {
-    name: String,
-    race: String,
-    class: String,
-  }
-`);
+const CharacterType = new GraphQLObjectType({
+  name: 'Character',
+  fields: () => ({
+    id: { type: GraphQLInt },
+    name: { type: GraphQLString },
+    race: { type: GraphQLString },
+    class: { type: GraphQLString },
+  }),
+});
 
-export default schema;
+export default CharacterType;
