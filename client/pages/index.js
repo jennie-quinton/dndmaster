@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import CreateCharacterWidget from '../containers/createCharacterWidget';
+import Widgets from '../containers/widgets';
 import MenuBar from '../components/menuBar';
 import { addCharacter } from '../actions/characterActions';
 
@@ -14,15 +14,13 @@ class Home extends Component {
     return (
       <div>
         <MenuBar />
-        <div>
-          <CreateCharacterWidget />
-        </div>
+        <Widgets />
       </div>
     );
   }
 }
 
-const mapStateToProps = () => {};
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
   getInitialCharacter: () => dispatch(addCharacter()),
