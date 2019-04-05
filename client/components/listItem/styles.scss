@@ -4,4 +4,8 @@
   list-style: none;
   margin-right: 3 * $rhythm;
   padding: $rhythm;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $grey;
+  }
 }
