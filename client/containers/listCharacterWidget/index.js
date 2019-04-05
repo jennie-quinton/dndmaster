@@ -7,7 +7,7 @@ import List from '../../components/list';
 import ListItem from '../../components/listItem';
 
 const ListCharacterWidget = ({ characters }) => (
-  <Widget title="Character List">
+  <Widget title="Character List" size="medium">
     <List withScroll>
       {characters.map(character => (
         <ListItem key={character.id}>

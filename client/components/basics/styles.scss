@@ -12,3 +12,12 @@
   height: 1px;
   background-color: $grey;
 }
+
+.label {
+  display: block;
+}
+
+.input-inline,
+.label-inline {
+  display: inline
+}
