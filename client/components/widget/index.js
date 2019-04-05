@@ -6,8 +6,10 @@ import styles from './styles.scss';
 
 const Widget = ({ title, children }) => (
   <div className={styles.wrapper}>
-    <Heading level={2}>{title}</Heading>
-    <VerticalLine />
+    <div className={styles.top}>
+      <Heading level={2}>{title}</Heading>
+      <VerticalLine />
+    </div>
     {children}
   </div>
 );
