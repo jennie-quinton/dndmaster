@@ -11,6 +11,12 @@ module.exports = {
   },
   module: {
     rules: [
+      // needed for graphql
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto'
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -54,7 +60,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js'],
+    // mjs needed for graphql
+    extensions: ['.mjs', '.js'],
     alias: {
       'components': path.join(__dirname, 'components'),
       'containers': path.join(__dirname, 'containers'),

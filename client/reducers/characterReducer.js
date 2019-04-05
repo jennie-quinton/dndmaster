@@ -1,5 +1,3 @@
-
-
   const intialState = {
     characters: [],
   };
@@ -8,7 +6,7 @@
     const newAction = {...action};
 
     switch(action.type) {
-      case 'CREATE_CHARACTER': {
+      case 'CREATE_CHARACTER_SUCCESS': {
         return {
           ...state,
           characters: [

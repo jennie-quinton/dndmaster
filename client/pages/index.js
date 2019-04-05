@@ -25,8 +25,10 @@ const mapStateToProps = (state ) => {
   return {};
 }
 
-const mapDispatchToProps =(dispatch)=>  {
-  getInitialCharacter: dispatch(addCharacter())
-}
+const mapDispatchToProps = (dispatch)=> {
+  return {
+    getInitialCharacter: () => dispatch(addCharacter()),
+  }
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
