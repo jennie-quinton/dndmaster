@@ -11,7 +11,7 @@ const characterReducer = (state = intialState, action) => {
         ...state,
         characters: [
           ...state.characters,
-          newAction.data,
+          ...newAction.data.characters,
         ],
       };
     }

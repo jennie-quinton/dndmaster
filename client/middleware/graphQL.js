@@ -1,11 +1,22 @@
 import { graphql, GraphQLSchema } from 'graphql';
 
 const root = {
-  id: 1,
-  initiative: 12,
-  name: 'Mikely Gregor',
-  race: 'Human',
-  class: 'Monk',
+  characters: [
+    {
+      id: 1,
+      initiative: 12,
+      name: 'Mikely Gregor',
+      race: 'Human',
+      class: 'Monk',
+    },
+    {
+      id: 2,
+      initiative: 16,
+      name: 'Qwen',
+      race: 'Elf',
+      class: 'Fighter',
+    },
+  ],
 };
 
 const graphQL = store => next => (action) => {

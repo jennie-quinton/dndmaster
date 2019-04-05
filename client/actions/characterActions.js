@@ -1,9 +1,14 @@
 import CharacterType from './schemas/characterSchema';
+import CharactersType from './schemas/charactersSchema';
 
 const getCharacters = () => dispatch => dispatch({
   type: 'GET_CHARACTERS',
-  schemaType: CharacterType,
-  query: '{ id, name, class, race }',
+  schemaType: CharactersType,
+  query: `{
+    characters {
+      id, name, class, race
+    }
+  }`,
 });
 
 export {
