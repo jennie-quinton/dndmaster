@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 import Widgets from '../containers/widgets';
 import MenuBar from '../components/menuBar';
-import { addCharacter } from '../actions/characterActions';
+import { getCharacters } from '../actions/characterActions';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getInitialCharacter();
+    this.props.getInitialCharacters();
   }
 
   render() {
@@ -23,7 +23,7 @@ class Home extends Component {
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  getInitialCharacter: () => dispatch(addCharacter()),
+  getInitialCharacters: () => dispatch(getCharacters()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
