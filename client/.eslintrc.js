@@ -3,6 +3,7 @@ module.exports = {
   "rules": {
     "react/jsx-filename-extension": "off",
     "react/destructuring-assignment": "off",
+    "react/jsx-one-expression-per-line": "off",
     // TODO: to be removed after adding proptypes
     "react/prop-types": "off",
     "no-unused-vars": "off",
