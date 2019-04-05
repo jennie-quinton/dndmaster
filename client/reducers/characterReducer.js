@@ -1,24 +1,24 @@
-  const intialState = {
-    characters: [],
-  };
+const intialState = {
+  characters: [],
+};
 
-  const characterReducer = (state = intialState, action) => {
-    const newAction = {...action};
+const characterReducer = (state = intialState, action) => {
+  const newAction = { ...action };
 
-    switch(action.type) {
-      case 'CREATE_CHARACTER_SUCCESS': {
-        return {
-          ...state,
-          characters: [
-            ...state.characters,
-            newAction.data,
-          ],
-        }
-      }
-      default: {
-        return state;
-      }
+  switch (action.type) {
+    case 'GET_CHARACTERS_SUCCESS': {
+      return {
+        ...state,
+        characters: [
+          ...state.characters,
+          newAction.data,
+        ],
+      };
+    }
+    default: {
+      return state;
     }
   }
+};
 
-  export default characterReducer;
+export default characterReducer;

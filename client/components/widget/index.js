@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Widget = ({children}) => {
-    return (
-        <div>
-            {children}
-        </div>
-    );
-};
+import styles from './styles.scss';
+
+const Widget = ({ children }) => (
+  <div className={styles.widget}>
+    {children}
+  </div>
+);
 
 export default Widget;

@@ -1,0 +1,7 @@
+@import 'sass/variables';
+
+.list-item {
+  list-style: none;
+  margin-right: 3 * $rhythm;
+  padding: $rhythm;
+}

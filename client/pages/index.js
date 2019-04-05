@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { addCharacter } from '../actions/characterActions';
-
-import CreateCharacterWidget from 'containers/createCharacterWidget';
-import MenuBar from 'components/menuBar';
+import Widgets from '../containers/widgets';
+import MenuBar from '../components/menuBar';
+import { getCharacters } from '../actions/characterActions';
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getInitialCharacter();
+    this.props.getInitialCharacters();
   }
 
   render() {
     return (
       <div>
-        <MenuBar/>
-        <CreateCharacterWidget />
+        <MenuBar />
+        <Widgets />
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = (state ) => {
-  return {};
-}
+const mapStateToProps = () => ({});
 
-const mapDispatchToProps = (dispatch)=> {
-  return {
-    getInitialCharacter: () => dispatch(addCharacter()),
-  }
-};
+const mapDispatchToProps = dispatch => ({
+  getInitialCharacters: () => dispatch(getCharacters()),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
