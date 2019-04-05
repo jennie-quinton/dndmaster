@@ -9,4 +9,4 @@ const Paragraph = ({ children, className }) => (
   </p>
 );
 
-export default (Paragraph);
+export default Paragraph;

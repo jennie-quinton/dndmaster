@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from './styles.scss';
 
 const List = ({ children, withScroll }) => (
-  <ul className={classnames(styles.list, { [styles.scrolling]: withScroll })}>
+  <ul className={classnames(styles.wrapper, { [styles.scrolling]: withScroll })}>
     {children}
   </ul>
 );

@@ -12,4 +12,4 @@ const Heading = ({ children, level, className }) => {
   );
 };
 
-export default (Heading);
+export default Heading;

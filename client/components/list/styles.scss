@@ -1,5 +1,5 @@
 @import 'sass/variables';
-.list {
+.wrapper {
   margin: 0;
   padding: 0;
 }
@@ -7,7 +7,7 @@
 .scrolling {
   overflow-y: scroll;
   max-height: 200px;
-  padding-right: $rhythm;
+  padding-right: 2 * $rhythm;
 
   /* width */
   &::-webkit-scrollbar {
