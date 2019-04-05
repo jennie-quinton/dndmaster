@@ -1,9 +1,11 @@
 import React from 'react';
 
+import styles from './styles.scss';
+
 const ListItem = ({ children }) => (
-  <div>
+  <li className={styles['list-item']}>
     {children}
-  </div>
+  </li>
 );
 
 export default ListItem;

@@ -7,9 +7,11 @@ import ListItem from '../../components/listItem';
 
 const ListCharacterWidget = ({ characters }) => (
   <Widget>
-    <List>
+    <List withScroll>
       {characters.map(character => (
-        <ListItem key={character.id}><p>{character.name}</p></ListItem>
+        <ListItem key={character.id}>
+          <p>{character.name}</p>
+        </ListItem>
       ))}
     </List>
   </Widget>
