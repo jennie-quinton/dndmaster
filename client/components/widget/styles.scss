@@ -1,0 +1,16 @@
+@import 'sass/variables';
+
+.wrapper {
+  border: 1px solid #000;
+  padding: $rhythm;
+  background-color: #fff;
+  margin: $rhythm;
+}
+
+.medium {
+  height: 200px;
+}
+
+.top {
+  margin-bottom: $rhythm;
+}

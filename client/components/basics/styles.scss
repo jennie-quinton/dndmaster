@@ -1,0 +1,23 @@
+@import 'sass/variables';
+
+.paragraph {
+  margin: 0;
+}
+
+.heading {
+  margin: 0;
+}
+
+.vertical-line {
+  height: 1px;
+  background-color: $grey;
+}
+
+.label {
+  display: block;
+}
+
+.input-inline,
+.label-inline {
+  display: inline
+}

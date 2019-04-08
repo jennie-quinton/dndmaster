@@ -1,0 +1,7 @@
+@import 'sass/variables';
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3 * $rhythm;
+}

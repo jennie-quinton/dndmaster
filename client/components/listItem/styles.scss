@@ -1,0 +1,10 @@
+@import 'sass/variables';
+
+.wrapper {
+  list-style: none;
+  padding: $rhythm;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $grey;
+  }
+}
