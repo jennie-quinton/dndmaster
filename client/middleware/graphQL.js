@@ -1,36 +1,16 @@
-import { graphql, GraphQLSchema } from 'graphql';
-
-const root = {
-  characters: [
-    {
-      id: 1,
-      initiative: 12,
-      name: 'Mikely Gregor',
-      race: 'Human',
-      class: 'Monk',
-    },
-    {
-      id: 2,
-      initiative: 16,
-      name: 'Qwen',
-      race: 'Elf',
-      class: 'Fighter',
-    },
-  ],
-};
+require('isomorphic-fetch');
 
 const graphQL = store => next => (action) => {
-  const { schemaType, query } = action;
-
+  const { query } = action;
   if (!query) return next(action);
 
   next({ type: `${action.type}_REQUEST` });
 
-  const schema = new GraphQLSchema({
-    query: schemaType,
-  });
-
-  return graphql(schema, query, root)
+  return fetch('endpoint', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query }),
+  })
     .then((response) => {
       if (response.data) {
         return next({
