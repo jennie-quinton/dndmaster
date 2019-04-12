@@ -45,12 +45,12 @@ require('./routes/authRoutes')(app);
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
   // like our main.js file, main.css file
-  app.use(express.static('client/out'));
+  app.use(express.static('client/dist'));
   // Express will serve up the index.html file
   // if it doesn't recognize the route
   const path = require('path');
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'out', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
   });
 }
 
