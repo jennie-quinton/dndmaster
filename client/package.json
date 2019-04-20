@@ -32,7 +32,8 @@
     "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.5"
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -44,7 +45,6 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   }
 }
