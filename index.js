@@ -31,7 +31,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(
-  '/graphql',
+  '/api/graphql',
   requireLogin,
   expressGraphQL({
     schema,
@@ -57,4 +57,4 @@ if (process.env.NODE_ENV === 'production') {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 console.log('LISTENING TO PORT:', PORT);
-console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('NODE_ENV:', process.env.NODE_ENV || 'development');
