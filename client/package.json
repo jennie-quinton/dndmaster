@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/jennie-quinton/dndmaster#readme",
   "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "classnames": "^2.2.6",
     "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
@@ -36,10 +40,6 @@
     "webpack-cli": "^3.2.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
     "eslint": "^5.15.3",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
