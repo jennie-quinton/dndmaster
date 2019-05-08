@@ -9,4 +9,11 @@ const getUser = () => (dispatch) => {
   });
 };
 
-export { login, getUser };
+const logout = () => (dispatch) => {
+  dispatch({
+    type: 'LOGOUT',
+    endpoint: '/auth/logout',
+  });
+};
+
+export { login, getUser, logout };

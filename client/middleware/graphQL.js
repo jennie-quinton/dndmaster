@@ -1,16 +1,12 @@
 require('isomorphic-fetch');
 
-const graphQL = store => next => (action) => {
+const graphQL = store => next => (action = {}) => {
   const { query } = action;
   if (!query) return next(action);
 
   next({ type: `${action.type}_REQUEST` });
 
-  const apiUrl = process.env.API_PROXY_HOST;
-  const endpoint = '/api/graphql';
-  const url = process.env.NODE_ENV === 'development' ? apiUrl + endpoint : endpoint;
-
-  return fetch(url, {
+  return fetch('/api/graphql', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query }),

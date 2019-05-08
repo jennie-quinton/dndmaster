@@ -78,7 +78,14 @@ module.exports = env => ({
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env.NODE_ENV || 'development'),
-      'process.env.API_PROXY_HOST': JSON.stringify(env.API_PROXY_HOST || ''),
     }),
   ],
+  devServer: {
+    proxy: {
+      target: 'https://dnd-master-staging.herokuapp.com',
+      secure: false,
+      context: ['/auth', '/api'],
+      changeOrigin: true,
+    },
+  },
 });

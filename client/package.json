@@ -4,7 +4,7 @@
   "description": "The idea for this app is to build components a dnd master can use to plan and play in a campaign.",
   "main": "index.js",
   "scripts": {
-    "dev": "BASENAME=localhost webpack-dev-server --devtool eval --config  webpack.config.js --progress --colors --hot --env.NODE_ENV=development --env.API_PROXY_HOST=https://dnd-master-staging.herokuapp.com",
+    "dev": "BASENAME=localhost webpack-dev-server --devtool eval --config  webpack.config.js --progress --colors --hot --env.NODE_ENV=development",
     "build": "webpack --mode=production",
     "lint": "eslint '**/*.js'"
   },
@@ -24,7 +24,7 @@
     "html-webpack-plugin": "^3.2.0",
     "isomorphic-fetch": "^2.2.1",
     "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-redux": "^6.0.1",
@@ -44,6 +44,7 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "http-proxy": "^1.17.0",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
   }

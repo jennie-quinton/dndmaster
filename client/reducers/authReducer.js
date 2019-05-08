@@ -1,5 +1,5 @@
 const intialState = {
-  user: [],
+  user: null,
 };
 
 const authReducer = (state = intialState, action) => {
@@ -7,9 +7,17 @@ const authReducer = (state = intialState, action) => {
 
   switch (action.type) {
     case 'GET_USER_SUCCESS': {
-      console.log(newAction);
       return {
         ...state,
+        user: {
+          name: 'Bob',
+        },
+      };
+    }
+    case 'GET_USER_FAILURE': {
+      return {
+        ...state,
+        user: newAction.error.statusText,
       };
     }
     default: {

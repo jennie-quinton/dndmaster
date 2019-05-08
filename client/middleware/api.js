@@ -1,18 +1,23 @@
 require('isomorphic-fetch');
 
-const graphQL = store => next => (action) => {
+const graphQL = store => next => (action = {}) => {
   const { endpoint } = action;
   if (!endpoint) return next(action);
 
   next({ type: `${action.type}_REQUEST` });
 
-  const apiUrl = process.env.API_PROXY_HOST;
-  const url = process.env.NODE_ENV === 'development' ? apiUrl + endpoint : endpoint;
-
-  return fetch(url, {
+  return fetch(endpoint, {
+    method: action.method || 'GET',
     headers: { 'Content-Type': 'application/json' },
   })
     .then((response) => {
+      if (!response.ok) {
+        return next({
+          type: `${action.type}_FAILURE`,
+          error: { statusText: response.statusText },
+        });
+      }
+
       if (response.data) {
         return next({
           type: `${action.type}_SUCCESS`,
