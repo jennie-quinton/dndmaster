@@ -1,6 +1,6 @@
 require('isomorphic-fetch');
 
-const graphQL = store => next => (action = {}) => {
+const api = store => next => (action = {}) => {
   const { endpoint } = action;
   if (!endpoint) return next(action);
 
@@ -18,13 +18,6 @@ const graphQL = store => next => (action = {}) => {
         });
       }
 
-      if (response.data) {
-        return next({
-          type: `${action.type}_SUCCESS`,
-          ...response,
-        });
-      }
-
       if (response.errors) {
         return next({
           type: `${action.type}_FAILURE`,
@@ -32,7 +25,10 @@ const graphQL = store => next => (action = {}) => {
         });
       }
 
-      return Promise.resolve();
+      return next({
+        type: `${action.type}_SUCCESS`,
+        ...response,
+      });
     })
     .catch((error) => {
       console.error(error); // eslint-disable-line no-console
@@ -43,4 +39,4 @@ const graphQL = store => next => (action = {}) => {
     });
 };
 
-export default graphQL;
+export default api;
