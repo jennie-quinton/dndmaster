@@ -1,10 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-const expressGraphQL = require('express-graphql');
 
 /** Mongoose models */
 require('./models/Character');
@@ -13,34 +11,23 @@ require('./models/User');
 /** Express services */
 require('./services/passport');
 
-/** Express middleware */
-const requireLogin = require('./middlewares/requireLogin');
-
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
-const schema = require('./schema');
 
 app.use(bodyParser.json());
-app.use(
-  cookieSession({
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
-  })
-);
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(
-  '/api/graphql',
-  requireLogin,
-  expressGraphQL({
-    schema,
-    graphiql: true
-  })
-);
 
 /** Set up custom routes */
-require('./routes/authRoutes')(app);
+const auth = require('./routes/auth');
+const user = require('./routes/user');
+const graph = require('./routes/graph');
+
+app.use('/auth', auth);
+app.use('/api', passport.authenticate('jwt', { session: false }), user);
+app.use('/api', passport.authenticate('jwt', { session: false }), graph);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
