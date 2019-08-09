@@ -3,7 +3,7 @@ const schema = require('../schema');
 const express = require('express');
 const router = express.Router();
 
-router.get(
+router.all(
   '/graphql',
   expressGraphQL({
     schema,
