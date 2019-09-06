@@ -1,19 +1,37 @@
-const login = () => {
-  window.location.href = '/auth/google';
-};
+const login = () => dispatch => dispatch({
+  type: 'LOGIN',
+  endpoint: '/auth/login',
+  method: 'POST',
+});
 
-const getUser = () => (dispatch) => {
-  dispatch({
-    type: 'GET_USER',
-    endpoint: '/api/user',
-  });
-};
+const registerUser = () => dispatch => dispatch({
+  type: 'REGISTER_USER',
+  endpoint: '/auth/register',
+  method: 'POST',
+  body: [
+    {
+      key: 'email',
+      value: 'jordan@test.com',
+      type: 'text',
+    },
+    {
+      key: 'password',
+      value: 'password123',
+      type: 'text',
+    },
+  ],
+});
 
-const logout = () => (dispatch) => {
-  dispatch({
-    type: 'LOGOUT',
-    endpoint: '/auth/logout',
-  });
-};
+const getUser = () => dispatch => dispatch({
+  type: 'GET_USER',
+  endpoint: '/api/user',
+});
 
-export { login, getUser, logout };
+const logout = () => dispatch => dispatch({
+  type: 'LOGOUT',
+  endpoint: '/auth/logout',
+});
+
+export {
+  login, getUser, logout, registerUser,
+};

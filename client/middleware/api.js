@@ -9,6 +9,7 @@ const api = store => next => (action = {}) => {
   return fetch(endpoint, {
     method: action.method || 'GET',
     headers: { 'Content-Type': 'application/json' },
+    body: action.body,
   })
     .then((response) => {
       if (!response.ok) {

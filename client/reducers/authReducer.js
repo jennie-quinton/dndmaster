@@ -17,7 +17,8 @@ const authReducer = (state = intialState, action) => {
     case 'GET_USER_FAILURE': {
       return {
         ...state,
-        user: newAction.error.statusText,
+        user: null,
+        error: newAction.error.statusText,
       };
     }
     default: {

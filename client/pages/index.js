@@ -1,42 +1,45 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import Widgets from '../containers/widgets';
+import Campaign from '../containers/campaign';
 import Login from '../containers/login';
-import MenuBar from '../components/menuBar';
 import { getUser } from '../actions/authActions';
+import Page from '../components/page';
 
-class Home extends Component {
-  componentDidMount() {
-    this.props.getUser();
-  }
+const Home = ({ user, onGetUser }) => {
+  const [loading, setLoading] = useState(true);
 
-  render() {
-    const { user } = this.props;
+  useEffect(() => {
+    onGetUser().then(() => {
+      setLoading(false);
+    });
+  });
 
-    if (user === 'Unauthorized') {
-      return <Login />;
-    }
-
-    if (user && user.name) {
-      return (
-        <div>
-          <MenuBar />
-          <Widgets />
-        </div>
-      );
-    }
-
+  if (loading) {
     return <p>Loading</p>;
   }
-}
+
+  if (user && user.name) {
+    return (
+      <Page>
+        <Campaign />
+      </Page>
+    );
+  }
+
+  return (
+    <Page>
+      <Login />
+    </Page>
+  );
+};
 
 const mapStateToProps = state => ({
   user: state.auth.user,
 });
 
 const mapDispatchToProps = dispatch => ({
-  getUser: () => dispatch(getUser()),
+  onGetUser: () => dispatch(getUser()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
