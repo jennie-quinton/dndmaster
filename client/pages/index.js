@@ -19,7 +19,7 @@ const Home = ({ user, onGetUser }) => {
     return <p>Loading</p>;
   }
 
-  if (user && user.name) {
+  if (user && user.email) {
     return (
       <Page>
         <Campaign />
