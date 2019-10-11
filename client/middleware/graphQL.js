@@ -1,12 +1,12 @@
 require('isomorphic-fetch');
 
-const graphQL = store => next => (action) => {
+const graphQL = store => next => (action = {}) => {
   const { query } = action;
   if (!query) return next(action);
 
   next({ type: `${action.type}_REQUEST` });
 
-  return fetch('endpoint', {
+  return fetch('/api/graphql', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query }),

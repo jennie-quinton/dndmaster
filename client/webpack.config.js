@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+module.exports = env => ({
   entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -77,13 +77,15 @@ module.exports = {
       filename: 'index.css',
     }),
     new webpack.DefinePlugin({
-      'process.env': {},
+      'process.env.NODE_ENV': JSON.stringify(env.NODE_ENV || 'development'),
     }),
-    // To add when have bundles instead of one entry point
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'common',
-    //   filename: 'common.js',
-    //   children: true,
-    // }),
   ],
-};
+  devServer: {
+    proxy: {
+      target: 'https://dnd-master-staging.herokuapp.com',
+      secure: false,
+      context: ['/auth', '/api'],
+      changeOrigin: true,
+    },
+  },
+});
