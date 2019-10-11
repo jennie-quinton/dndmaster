@@ -4,17 +4,18 @@ import classnames from 'classnames';
 import styles from './styles.scss';
 
 const Input = ({
-  type = 'text', placeholder, labelText, formName, inline, value, onChange, name,
+  type = 'text', placeholder, labelText, formName, inline, value, onChange, name, ariaLabel,
 }) => {
   const inputId = `${formName}-${name}`;
 
   const renderInput = () => (
     <input
+      aria-label={ariaLabel}
       type={type}
       id={inputId}
       value={value}
       placeholder={placeholder}
-      className={inline && styles['input-inline']}
+      className={classnames(styles.input, { [styles['input-inline']]: inline })}
       onChange={onChange}
     />
   );
