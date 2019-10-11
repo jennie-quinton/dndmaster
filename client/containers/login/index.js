@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 
 import { login } from '../../actions/authActions';
 import RegisterWidget from '../registerWidget';
+import LoginWidget from '../loginWidget';
 import WidgetsContainer from '../widgetsContainer';
 
 const loginContainer = ({ requestLogin }) => (
   <WidgetsContainer>
-    login
+    <LoginWidget />
     <RegisterWidget />
   </WidgetsContainer>
 );

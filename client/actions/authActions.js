@@ -1,25 +1,21 @@
-const login = () => dispatch => dispatch({
+const login = ({ email, password }) => dispatch => dispatch({
   type: 'LOGIN',
   endpoint: '/auth/login',
   method: 'POST',
+  body: {
+    email,
+    password,
+  },
 });
 
-const registerUser = () => dispatch => dispatch({
+const registerUser = ({ email, password }) => dispatch => dispatch({
   type: 'REGISTER_USER',
   endpoint: '/auth/register',
   method: 'POST',
-  body: [
-    {
-      key: 'email',
-      value: 'jordan@test.com',
-      type: 'text',
-    },
-    {
-      key: 'password',
-      value: 'password123',
-      type: 'text',
-    },
-  ],
+  body: {
+    email,
+    password,
+  },
 });
 
 const getUser = () => dispatch => dispatch({

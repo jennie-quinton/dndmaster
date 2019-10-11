@@ -6,15 +6,20 @@ const authReducer = (state = intialState, action) => {
   const newAction = { ...action };
 
   switch (action.type) {
-    case 'GET_USER_SUCCESS': {
+    case 'GET_USER_SUCCESS':
+    case 'LOGIN_SUCCESS':
+    case 'REGISTER_USER_SUCCESS': {
       return {
         ...state,
         user: {
-          name: 'Bob',
+          email: newAction.payload.user.email,
         },
+        token: newAction.payload.token,
       };
     }
-    case 'GET_USER_FAILURE': {
+    case 'REGISTER_USER_FAILURE':
+    case 'GET_USER_FAILURE':
+    case 'LOGIN_FAILURE': {
       return {
         ...state,
         user: null,

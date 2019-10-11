@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from './styles.scss';
 
-const Button = ({ children }) => (
-  <button type="button">
+const Button = ({ children, onClick }) => (
+  <button type="button" onClick={onClick}>
     {children}
   </button>
 );

@@ -3,33 +3,30 @@ import { connect } from 'react-redux';
 
 import Widget from '../../components/widget';
 
-import { registerUser } from '../../actions/authActions';
+import { login } from '../../actions/authActions';
 import { Form, Input } from '../../components/basics';
 import Button from '../../components/basics/button';
 
-const RegisterWidget = ({ onRegisterUser }) => {
+const LoginWidget = ({ onLoginUser }) => {
   const [email, changeEmail] = useState('');
   const [password, changePassword] = useState('');
-  const [confirmPassword, changeConfirmPassword] = useState('');
   const updateInput = updateStateFunction => (event) => {
     updateStateFunction(event.target.value);
   };
-  const submitRegistrationForm = () => {
-    if (password === confirmPassword) {
-      onRegisterUser({ email, password });
-    }
+  const submitLoginForm = () => {
+    onLoginUser({ email, password });
   };
 
   return (
-    <Widget title="Register" size="medium">
-      <Form name="register-form">
+    <Widget title="Login" size="medium">
+      <Form name="login-form">
         <Input
           labelText="Email"
           type="email"
           placeholder="Email"
           value={email}
           onChange={updateInput(changeEmail)}
-          formName="register-form"
+          formName="login-form"
           name="email"
         />
         <Input
@@ -38,19 +35,10 @@ const RegisterWidget = ({ onRegisterUser }) => {
           placeholder="password"
           value={password}
           onChange={updateInput(changePassword)}
-          formName="register-form"
+          formName="login-form"
           name="password"
         />
-        <Input
-          labelText="Confirm password"
-          type="password"
-          placeholder="password"
-          value={confirmPassword}
-          onChange={updateInput(changeConfirmPassword)}
-          formName="register-form"
-          name="confirm-password"
-        />
-        <Button onClick={submitRegistrationForm}>Register</Button>
+        <Button onClick={submitLoginForm}>Login</Button>
       </Form>
     </Widget>
   );
@@ -58,7 +46,7 @@ const RegisterWidget = ({ onRegisterUser }) => {
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch => ({
-  onRegisterUser: userDetails => dispatch(registerUser(userDetails)),
+  onLoginUser: userDetails => dispatch(login(userDetails)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegisterWidget);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginWidget);
