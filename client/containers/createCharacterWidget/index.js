@@ -1,14 +1,23 @@
 import React from 'react';
 
 import Widget from '../../components/widget';
-import { Input, Form } from '../../components/basics';
+import { Input, Form, Layout } from '../../components/basics';
 
 const CreateCharacterWidget = () => (
-  <Widget title="Create Character" size="medium">
+  <Widget title="Create Character" centerTitle>
     <Form>
-      <Input placeholder="name" labelText="Name" formName="character-creation" />
-      <Input placeholder="race" labelText="Race" formName="character-creation" />
-      <Input placeholder="class" labelText="Class" formName="character-creation" />
+      <Layout spacing={['8px', 0, 0, 0]}>
+        <Input placeholder="Player Name" labelText="Player Name" formName="character-creation" inline fullWidth noWrap />
+      </Layout>
+      <Layout spacing={['8px', 0, 0, 0]}>
+        <Input placeholder="Name" labelText="Name" formName="character-creation" inline fullWidth />
+      </Layout>
+      <Layout spacing={['8px', 0, 0, 0]}>
+        <Input placeholder="race" labelText="Race" formName="character-creation" inline fullWidth />
+      </Layout>
+      <Layout spacing={['8px', 0, 0, 0]}>
+        <Input placeholder="Class" labelText="Class" formName="character-creation" inline fullWidth />
+      </Layout>
     </Form>
   </Widget>
 );

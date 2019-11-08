@@ -6,7 +6,7 @@ import Login from '../containers/login';
 import Page from '../components/page';
 
 const Home = ({ user }) => {
-  if (user && user.email) {
+  if (true) {
     return (
       <Page>
         <Campaign />

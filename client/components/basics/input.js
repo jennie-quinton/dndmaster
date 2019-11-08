@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from './styles.scss';
 
 const Input = ({
-  type = 'text', placeholder, labelText, formName, inline, value, onChange, name, ariaLabel, fullWidth,
+  type = 'text', placeholder, labelText, formName, inline, value, onChange, name, ariaLabel, fullWidth, noWrap,
 }) => {
   const inputId = `${formName}-${name}`;
 
@@ -28,7 +28,10 @@ const Input = ({
       {labelText && (
         <label
           htmlFor={inputId}
-          className={classnames(styles.label, { [styles.labelInline]: inline })}
+          className={classnames(styles.label, {
+            [styles.labelInline]: inline,
+            [styles.noWrap]: noWrap,
+          })}
         >
           {labelText}
         </label>
