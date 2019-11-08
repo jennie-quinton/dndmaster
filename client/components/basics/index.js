@@ -4,6 +4,7 @@ import VerticalLine from './line';
 import Input from './input';
 import Form from './form';
 import Layout from './layout';
+import Button from './button';
 
 export {
   Paragraph,
@@ -12,4 +13,5 @@ export {
   Input,
   Form,
   Layout,
+  Button,
 };

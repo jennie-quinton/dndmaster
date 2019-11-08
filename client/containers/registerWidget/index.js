@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import Widget from '../../components/widget';
 
 import { registerUser } from '../../actions/authActions';
-import { Form, Input, Layout } from '../../components/basics';
-import Button from '../../components/basics/button';
+import {
+  Form, Input, Layout, Button,
+} from '../../components/basics';
 
 import styles from './styles.scss';
 
