@@ -2,13 +2,13 @@ import React from 'react';
 
 import ListCharacterWidget from '../listCharacterWidget';
 import CreateCharacterWidget from '../createCharacterWidget';
-import styles from './styles.scss';
+import WidgetsContainer from '../widgetsContainer';
 
-const Widgets = () => (
-  <div className={styles.container}>
+const Campaign = () => (
+  <WidgetsContainer>
     <ListCharacterWidget />
     <CreateCharacterWidget />
-  </div>
+  </WidgetsContainer>
 );
 
-export default Widgets;
+export default Campaign;

@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-import Widgets from '../containers/widgets';
-import MenuBar from '../components/menuBar';
-import { getCharacters } from '../actions/characterActions';
+import Campaign from '../containers/campaign';
+import Login from '../containers/login';
+import Page from '../components/page';
 
-class Home extends Component {
-  componentDidMount() {
-    this.props.getInitialCharacters();
-  }
-
-  render() {
+const Home = ({ user }) => {
+  if (user && user.email) {
     return (
-      <div>
-        <MenuBar />
-        <Widgets />
-      </div>
+      <Page>
+        <Campaign />
+      </Page>
     );
   }
-}
 
-const mapStateToProps = () => ({});
+  return (
+    <Page>
+      <Login />
+    </Page>
+  );
+};
 
-const mapDispatchToProps = dispatch => ({
-  getInitialCharacters: () => dispatch(getCharacters()),
+const mapStateToProps = state => ({
+  user: state.auth.user,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+
+export default connect(mapStateToProps)(Home);
