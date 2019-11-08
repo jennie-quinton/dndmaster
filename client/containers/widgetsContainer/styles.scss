@@ -5,6 +5,18 @@
   flex-wrap: wrap;
 }
 
-.center {
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.rowCenter {
   justify-content: center
+}
+
+.columnCenter {
+  align-content: center;
 }

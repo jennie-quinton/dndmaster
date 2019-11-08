@@ -7,6 +7,8 @@ import { login } from '../../actions/authActions';
 import { Form, Input, Layout } from '../../components/basics';
 import Button from '../../components/basics/button';
 
+import styles from './styles.scss';
+
 const LoginWidget = ({ onLoginUser }) => {
   const [email, changeEmail] = useState('');
   const [password, changePassword] = useState('');
@@ -18,7 +20,7 @@ const LoginWidget = ({ onLoginUser }) => {
   };
 
   return (
-    <Widget title="Login" size="medium" centerText minWidth="200px">
+    <Widget title="Login" centerTitle minWidth="200px">
       <Form name="login-form">
         <Layout spacing={['8px', 0, 0, 0]}>
           <Input
@@ -29,6 +31,7 @@ const LoginWidget = ({ onLoginUser }) => {
             onChange={updateInput(changeEmail)}
             formName="login-form"
             name="email"
+            fullWidth
           />
         </Layout>
         <Layout spacing={['8px', 0, 0, 0]}>
@@ -40,9 +43,10 @@ const LoginWidget = ({ onLoginUser }) => {
             onChange={updateInput(changePassword)}
             formName="login-form"
             name="password"
+            fullWidth
           />
         </Layout>
-        <Layout spacing={['16px', 0, 0, 0]}>
+        <Layout spacing={['16px', 0, 0, 0]} className={styles.submitButton}>
           <Button onClick={submitLoginForm}>Login</Button>
         </Layout>
       </Form>

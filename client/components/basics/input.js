@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from './styles.scss';
 
 const Input = ({
-  type = 'text', placeholder, labelText, formName, inline, value, onChange, name, ariaLabel,
+  type = 'text', placeholder, labelText, formName, inline, value, onChange, name, ariaLabel, fullWidth,
 }) => {
   const inputId = `${formName}-${name}`;
 
@@ -15,19 +15,26 @@ const Input = ({
       id={inputId}
       value={value}
       placeholder={placeholder}
-      className={classnames(styles.input, { [styles['input-inline']]: inline })}
+      className={classnames(styles.input, {
+        [styles.inputInline]: inline,
+        [styles.fullWidth]: fullWidth,
+      })}
       onChange={onChange}
     />
   );
 
   return (
-    <Fragment>
-      {labelText ? (
-        <label htmlFor={inputId} className={classnames(styles.label, { [styles['label-inline']]: inline })}>
-          {labelText}: {renderInput()}
+    <div className={inline && styles.rowInline}>
+      {labelText && (
+        <label
+          htmlFor={inputId}
+          className={classnames(styles.label, { [styles.labelInline]: inline })}
+        >
+          {labelText}
         </label>
-      ) : renderInput()}
-    </Fragment>
+      )}
+      {renderInput()}
+    </div>
   );
 };
 

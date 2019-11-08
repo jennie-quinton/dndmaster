@@ -8,7 +8,7 @@
   margin: 0;
 }
 
-.vertical-line {
+.verticalLine {
   height: 1px;
   background-color: $grey;
 }
@@ -25,9 +25,23 @@
   font-size: 2 * $rhythm;
 }
 
-.input-inline,
-.label-inline {
-  display: inline
+.inputInline {
+  display: inline;
+}
+
+.rowInline {
+  display: flex;
+  align-items: center;
+}
+
+.labelInline {
+  margin-right: $rhythm;
+  // width: 100%;
+  word-wrap: none;
+}
+
+.fullWidth {
+  width: 100%;
 }
 
 .form {

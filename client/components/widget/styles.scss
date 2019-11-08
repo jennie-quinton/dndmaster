@@ -20,6 +20,14 @@
   margin-bottom: $rhythm;
 }
 
-.centerText {
+.centerTitle {
   text-align: center;
+}
+
+.children {
+  padding: 0 (2 * $rhythm);
+}
+
+.divider {
+  margin: $rhythm 0;
 }

@@ -2,13 +2,15 @@ import React from 'react';
 
 import styles from './styles.scss';
 
-const Layout = ({ children, spacing }) => (
-  <div style={{
-    marginTop: spacing[0],
-    marginRight: spacing[1],
-    marginBottom: spacing[2],
-    marginLeft: spacing[3],
-  }}
+const Layout = ({ children, spacing, className }) => (
+  <div
+    style={{
+      marginTop: spacing[0],
+      marginRight: spacing[1],
+      marginBottom: spacing[2],
+      marginLeft: spacing[3],
+    }}
+    className={className}
   >
     {children}
   </div>

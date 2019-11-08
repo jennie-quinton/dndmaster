@@ -6,17 +6,19 @@ import { Heading, VerticalLine } from '../basics';
 import styles from './styles.scss';
 
 const Widget = ({
-  title, children, size, centerText, minWidth,
+  title, children, size, centerTitle, minWidth,
 }) => (
   <div
-    className={classnames(styles.wrapper, styles[size], { [styles.centerText]: centerText })}
+    className={classnames(styles.wrapper, styles[size])}
     style={minWidth && { minWidth }}
   >
     <div className={styles.top}>
-      <Heading level={2}>{title}</Heading>
-      <VerticalLine />
+      <Heading className={centerTitle && styles.centerTitle} level={2}>{title}</Heading>
+      <VerticalLine className={styles.divider} />
     </div>
-    {children}
+    <div className={styles.children}>
+      {children}
+    </div>
   </div>
 );
 
