@@ -5,12 +5,29 @@
   padding: $rhythm;
   background-color: #fff;
   margin: $rhythm;
+  border-radius: $rhythm;
+}
+
+.small {
+  height: 200px;
 }
 
 .medium {
-  height: 200px;
+  height: 400px;
 }
 
 .top {
   margin-bottom: $rhythm;
+}
+
+.centerTitle {
+  text-align: center;
+}
+
+.children {
+  padding: 0 (2 * $rhythm);
+}
+
+.divider {
+  margin: $rhythm 0;
 }

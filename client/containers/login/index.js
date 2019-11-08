@@ -7,7 +7,7 @@ import LoginWidget from '../loginWidget';
 import WidgetsContainer from '../widgetsContainer';
 
 const loginContainer = ({ requestLogin }) => (
-  <WidgetsContainer>
+  <WidgetsContainer center direction="column">
     <LoginWidget />
     <RegisterWidget />
   </WidgetsContainer>
