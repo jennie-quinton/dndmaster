@@ -1,16 +1,31 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Campaign from '../pages/campaign';
 import Login from '../pages/login';
+import PageNotFound from '../pages/pageNotFound';
 import Page from '../pages/page';
 
-const Home = ({ user }) => {
-  if (user && user.email) {
+const Home = ({ isLoggedIn }) => {
+  if (!isLoggedIn) {
     return (
-      <Page>
-        <Campaign />
-      </Page>
+      <Router>
+        <Page>
+          <Switch>
+            <Route exact path="/">
+              <Campaign />
+            </Route>
+            <Route>
+              <PageNotFound />
+            </Route>
+          </Switch>
+        </Page>
+      </Router>
     );
   }
 
@@ -22,7 +37,7 @@ const Home = ({ user }) => {
 };
 
 const mapStateToProps = state => ({
-  user: state.auth.user,
+  isLoggedIn: state.auth.user && state.auth.user.email,
 });
 
 
