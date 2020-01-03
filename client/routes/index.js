@@ -12,7 +12,7 @@ import PageNotFound from '../pages/pageNotFound';
 import Page from '../pages/page';
 
 const Home = ({ isLoggedIn }) => {
-  if (!isLoggedIn) {
+  if (isLoggedIn) {
     return (
       <Router>
         <Page>
