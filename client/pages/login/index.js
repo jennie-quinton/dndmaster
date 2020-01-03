@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { login } from '../../actions/authActions';
-import RegisterWidget from '../registerWidget';
-import LoginWidget from '../loginWidget';
-import WidgetsContainer from '../widgetsContainer';
+import RegisterWidget from '../../containers/registerWidget';
+import LoginWidget from '../../containers/loginWidget';
+import WidgetsContainer from '../../containers/widgetsContainer';
 
 const loginContainer = ({ requestLogin }) => (
   <WidgetsContainer center direction="column">

@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Campaign from '../containers/campaign';
-import Login from '../containers/login';
-import Page from '../components/page';
+import Campaign from '../pages/campaign';
+import Login from '../pages/login';
+import Page from '../pages/page';
 
 const Home = ({ user }) => {
   if (user && user.email) {
