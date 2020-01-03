@@ -1,0 +1,7 @@
+@import 'sass/variables';
+
+.page {
+  display: flex;
+  justify-content: center;
+  margin-top: $rhythm * 10;
+}

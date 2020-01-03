@@ -8,6 +8,7 @@ module.exports = env => ({
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -81,6 +82,7 @@ module.exports = env => ({
     }),
   ],
   devServer: {
+    historyApiFallback: true,
     proxy: {
       target: 'https://dnd-master-staging.herokuapp.com',
       secure: false,
