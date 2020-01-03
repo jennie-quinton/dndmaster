@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import styles from './styles.scss';
 
 const Form = ({ children }) => (
-  <form>
+  <form className={styles.form}>
     {children}
   </form>
 );

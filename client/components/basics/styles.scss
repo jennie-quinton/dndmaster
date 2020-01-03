@@ -8,16 +8,55 @@
   margin: 0;
 }
 
-.vertical-line {
+.verticalLine {
   height: 1px;
   background-color: $grey;
 }
 
 .label {
   display: block;
+  font-size: 2 * $rhythm;
 }
 
-.input-inline,
-.label-inline {
-  display: inline
+.input {
+  background-color: $background;
+  border: none;
+  padding: 0.5 * $rhythm;
+  font-size: 2 * $rhythm;
+}
+
+.inputInline {
+  display: inline;
+}
+
+.rowInline {
+  display: flex;
+  align-items: center;
+}
+
+.labelInline {
+  margin-right: $rhythm;
+  // width: 100%;
+  word-wrap: none;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  background-color: $primary;
+  font-size: 18px;
+  border: none;
+  border-radius: (0.5 * $rhythm);
+  padding: (0.5 * $rhythm) (2 * $rhythm);
+}
+
+.noWrap {
+  white-space: nowrap;
 }
