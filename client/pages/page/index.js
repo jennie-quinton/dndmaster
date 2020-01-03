@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MenuBar from '../menuBar';
+import MenuBar from '../../components/menuBar';
 
 import styles from './styles.scss';
 

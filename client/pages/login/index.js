@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { login } from '../../actions/authActions';
-import RegisterWidget from '../registerWidget';
-import LoginWidget from '../loginWidget';
-import WidgetsContainer from '../widgetsContainer';
+import RegisterWidget from '../../containers/registerWidget';
+import LoginWidget from '../../containers/loginWidget';
+import WidgetsContainer from '../../containers/widgetsContainer';
 
-const loginContainer = ({ requestLogin }) => (
+const LoginPage = ({ requestLogin }) => (
   <WidgetsContainer center direction="column">
     <LoginWidget />
     <RegisterWidget />
@@ -21,4 +21,4 @@ const mapDispatchToProps = dispatch => ({
   requestLogin: () => dispatch(login()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(loginContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
