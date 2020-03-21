@@ -1,6 +1,6 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
@@ -13,34 +13,35 @@ require('./models/User');
 /** Express services */
 require('./services/passport');
 
-/** Express middleware */
-const requireLogin = require('./middlewares/requireLogin');
-
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
+mongoose.connect(keys.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const app = express();
 const schema = require('./schema');
 
+app.use(cors());
 app.use(bodyParser.json());
-app.use(
-  cookieSession({
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
-  })
-);
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(
   '/api/graphql',
-  requireLogin,
+  passport.authenticate('jwt', { session: false }),
   expressGraphQL({
     schema,
     graphiql: true
   })
 );
 
+// Enable pre-flight request for all routes
+app.options('*', cors());
+
 /** Set up custom routes */
-require('./routes/authRoutes')(app);
+const auth = require('./routes/auth');
+
+app.use('/auth', auth);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets
@@ -56,5 +57,5 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
-console.log('LISTENING TO PORT:', PORT);
 console.log('NODE_ENV:', process.env.NODE_ENV || 'development');
+console.log('LISTENING TO PORT:', PORT);
