@@ -1,1 +1,868 @@
-{"mockup":{"controls":{"control":[{"ID":"0","h":"170","measuredH":"400","measuredW":"450","properties":{"text":"A Web Page\nhttp://"},"typeID":"BrowserWindow","w":"450","x":"63","y":"25","zOrder":"0"},{"ID":"1","measuredH":"27","measuredW":"88","properties":{"text":"Internet"},"typeID":"SubTitle","x":"244","y":"118","zOrder":"1"},{"ID":"2","h":"91","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"450","x":"69","y":"705","zOrder":"2"},{"ID":"3","measuredH":"27","measuredW":"57","properties":{"text":"Node"},"typeID":"SubTitle","x":"269","y":"729","zOrder":"3"},{"ID":"4","measuredH":"23","measuredW":"44","properties":{"size":"20","text":"8.11.1"},"typeID":"SubTitle","x":"272","y":"755","zOrder":"4"},{"ID":"5","h":"91","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"450","x":"69","y":"1094","zOrder":"5"},{"ID":"6","measuredH":"27","measuredW":"103","properties":{"text":"MongoDB"},"typeID":"SubTitle","x":"244","y":"1119","zOrder":"6"},{"ID":"7","measuredH":"23","measuredW":"121","properties":{"size":"20","text":"Version: 3.6.9"},"typeID":"SubTitle","x":"234","y":"1146","zOrder":"7"},{"ID":"8","h":"70","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"227","x":"38","y":"210","zOrder":"8"},{"ID":"9","measuredH":"23","measuredW":"151","properties":{"size":"20","text":"HTTP (Req)uest"},"typeID":"SubTitle","x":"76","y":"234","zOrder":"9"},{"ID":"10","measuredH":"19","measuredW":"76","properties":{"size":"16","text":"DB Server"},"typeID":"SubTitle","w":"80","x":"435","y":"1100","zOrder":"10"},{"ID":"11","h":"91","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"450","x":"69","y":"362","zOrder":"11"},{"ID":"12","measuredH":"27","measuredW":"57","properties":{"text":"Node"},"typeID":"SubTitle","x":"269","y":"386","zOrder":"12"},{"ID":"13","measuredH":"23","measuredW":"44","properties":{"size":"20","text":"8.11.1"},"typeID":"SubTitle","x":"272","y":"412","zOrder":"13"},{"ID":"14","measuredH":"19","measuredW":"87","properties":{"size":"16","text":"Web Server"},"typeID":"SubTitle","w":"87","x":"426","y":"367","zOrder":"14"},{"ID":"15","h":"49","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"450","x":"69","y":"316","zOrder":"15"},{"ID":"16","measuredH":"23","measuredW":"49","properties":{"size":"20","text":"3000"},"typeID":"SubTitle","x":"273","y":"329","zOrder":"16"},{"ID":"17","h":"70","measuredH":"70","measuredW":"100","properties":{"borderStyle":"square"},"typeID":"Canvas","w":"450","x":"69","y":"449","zOrder":"17"},{"ID":"18","measuredH":"27","measuredW":"289","properties":{"text":"Create React App + Proxy"},"typeID":"SubTitle","x":"150","y":"471","zOrder":"18"},{"ID":"19","measuredH":"19","measuredW":"30","properties":{"size":"16","text":"Port"},"typeID":"SubTitle","w":"33","x":"480","y":"322","zOrder":"19"},{"ID":"20","measuredH":"19","measuredW":"87","properties":{"size":"16","text":"Web Server"},"typeID":"SubTitle","w":"87","x":"426","y":"710","zOrder":"20"},{"ID":"21","h":"49","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"450","x":"69","y":"659","zOrder":"21"},{"ID":"22","h":"178","measuredH":"177","measuredW":"0","properties":{"curvature":"0","direction":"top","leftArrow":"false","p0":{"x":0,"y":0},"p1":{"x":0.5,"y":0},"p2":{"x":0,"y":177},"shape":"bezier","text":""},"typeID":"Arrow","w":"1","x":"265","y":"151","zOrder":"22"},{"ID":"23","measuredH":"23","measuredW":"48","properties":{"size":"20","text":"5000"},"typeID":"SubTitle","x":"269","y":"675","zOrder":"23"},{"ID":"24","h":"70","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"190","x":"102","y":"921","zOrder":"24"},{"ID":"25","h":"142","measuredH":"141","measuredW":"1","properties":{"curvature":"0","direction":"bottom","leftArrow":"true","p0":{"x":1,"y":0},"p1":{"x":0.4999999999999999,"y":-7.147598186903733e-19},"p2":{"x":0,"y":141},"shape":"bezier","text":""},"typeID":"Arrow","w":"2","x":"196","y":"971","zOrder":"25"},{"ID":"26","h":"70","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"248","x":"332","y":"210","zOrder":"26"},{"ID":"27","measuredH":"23","measuredW":"226","properties":{"size":"20","text":"HTTP (Res)ponse JSON"},"typeID":"SubTitle","x":"343","y":"234","zOrder":"27"},{"ID":"28","h":"178","measuredH":"177","measuredW":"0","properties":{"curvature":"0","direction":"top","leftArrow":"true","p0":{"x":0,"y":0},"p1":{"x":0.5,"y":0},"p2":{"x":0,"y":177},"rightArrow":"false","shape":"bezier","text":""},"typeID":"Arrow","w":"1","x":"331","y":"151","zOrder":"28"},{"ID":"29","h":"70","measuredH":"70","measuredW":"100","properties":{"borderStyle":"square"},"typeID":"Canvas","w":"450","x":"69","y":"792","zOrder":"29"},{"ID":"30","measuredH":"27","measuredW":"90","properties":{"text":"Express"},"typeID":"SubTitle","x":"251","y":"814","zOrder":"30"},{"ID":"31","h":"70","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"190","x":"300","y":"921","zOrder":"31"},{"ID":"32","h":"140","measuredH":"139","measuredW":"1","properties":{"curvature":"0","direction":"bottom","leftArrow":"true","p0":{"x":1,"y":0},"p1":{"x":0.5,"y":0},"p2":{"x":0,"y":139},"shape":"bezier","text":""},"typeID":"Arrow","w":"2","x":"394","y":"972","zOrder":"32"},{"ID":"33","measuredH":"23","measuredW":"158","properties":{"size":"20","text":"Route Handler #1"},"typeID":"SubTitle","x":"118","y":"945","zOrder":"33"},{"ID":"34","measuredH":"23","measuredW":"163","properties":{"size":"20","text":"Route Handler #2"},"typeID":"SubTitle","x":"314","y":"945","zOrder":"34"},{"ID":"35","h":"93","measuredH":"92","measuredW":"1","properties":{"curvature":"0","direction":"bottom","leftArrow":"true","p0":{"x":1,"y":0},"p1":{"x":0.5,"y":0},"p2":{"x":0,"y":92},"shape":"bezier","text":""},"typeID":"Arrow","w":"2","x":"198","y":"844","zOrder":"35"},{"ID":"36","h":"93","measuredH":"92","measuredW":"1","properties":{"curvature":"0","direction":"bottom","leftArrow":"true","p0":{"x":1,"y":0},"p1":{"x":0.5,"y":0},"p2":{"x":0,"y":92},"shape":"bezier","text":""},"typeID":"Arrow","w":"2","x":"394","y":"843","zOrder":"36"},{"ID":"37","h":"57","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"198","x":"196","y":"1018","zOrder":"37"},{"ID":"38","measuredH":"27","measuredW":"121","properties":{"size":"24","text":"mogoose.js"},"typeID":"SubTitle","x":"235","y":"1040","zOrder":"38"},{"ID":"39","measuredH":"19","measuredW":"120","properties":{"size":"16","text":"Object Modeling"},"typeID":"SubTitle","w":"124","x":"270","y":"1022","zOrder":"39"},{"ID":"40","h":"37","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"363","x":"111","y":"1182","zOrder":"40"},{"ID":"41","measuredH":"21","measuredW":"140","properties":{"size":"18","text":"Hosted with mlab"},"typeID":"SubTitle","x":"224","y":"1190","zOrder":"41"},{"ID":"42","measuredH":"19","measuredW":"30","properties":{"size":"16","text":"Port"},"typeID":"SubTitle","w":"33","x":"483","y":"665","zOrder":"42"},{"ID":"43","h":"70","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"227","x":"31","y":"557","zOrder":"43"},{"ID":"44","measuredH":"23","measuredW":"208","properties":{"size":"20","text":"Proxy HTTP (Req)uest"},"typeID":"SubTitle","x":"40","y":"581","zOrder":"44"},{"ID":"45","h":"178","measuredH":"177","measuredW":"0","properties":{"curvature":"0","direction":"top","leftArrow":"false","p0":{"x":0,"y":0},"p1":{"x":0.5,"y":0},"p2":{"x":0,"y":177},"shape":"bezier","text":""},"typeID":"Arrow","w":"1","x":"258","y":"498","zOrder":"45"},{"ID":"46","h":"70","measuredH":"70","measuredW":"100","typeID":"Canvas","w":"238","x":"325","y":"557","zOrder":"46"},{"ID":"47","measuredH":"23","measuredW":"222","properties":{"size":"20","text":"Proxy HTTP (Res)ponse"},"typeID":"SubTitle","x":"334","y":"581","zOrder":"47"},{"ID":"48","h":"178","measuredH":"177","measuredW":"0","properties":{"curvature":"0","direction":"top","leftArrow":"true","p0":{"x":0,"y":0},"p1":{"x":0.5,"y":0},"p2":{"x":0,"y":177},"rightArrow":"false","shape":"bezier","text":""},"typeID":"Arrow","w":"1","x":"324","y":"498","zOrder":"48"},{"ID":"49","measuredH":"80","measuredW":"275","properties":{"text":"If the request is coming in for */api/\\**.\n \nProxy it to the express servers, else server the bundles.js stuff from the react server."},"typeID":"Paragraph","x":"619","y":"519","zOrder":"49"}]},"measuredH":"1219","measuredW":"894","mockupH":"1194","mockupW":"863","version":"1.0"}}
+{
+  "mockup": {
+    "controls": {
+      "control": [
+        {
+          "ID": "0",
+          "measuredH": "27",
+          "measuredW": "131",
+          "properties": {
+            "text": "/api/graphql"
+          },
+          "typeID": "SubTitle",
+          "x": "143",
+          "y": "66",
+          "zOrder": "1"
+        },
+        {
+          "ID": "1",
+          "measuredH": "27",
+          "measuredW": "66",
+          "properties": {
+            "text": "POST"
+          },
+          "typeID": "SubTitle",
+          "x": "16",
+          "y": "66",
+          "zOrder": "2"
+        },
+        {
+          "ID": "3",
+          "h": "1877",
+          "locked": "true",
+          "measuredH": "70",
+          "measuredW": "100",
+          "typeID": "Canvas",
+          "w": "2271",
+          "x": "3",
+          "y": "16",
+          "zOrder": "0"
+        },
+        {
+          "ID": "4",
+          "measuredH": "27",
+          "measuredW": "131",
+          "properties": {
+            "text": "/api/graphql"
+          },
+          "typeID": "SubTitle",
+          "x": "128",
+          "y": "319",
+          "zOrder": "3"
+        },
+        {
+          "ID": "5",
+          "measuredH": "27",
+          "measuredW": "50",
+          "properties": {
+            "text": "GET"
+          },
+          "typeID": "SubTitle",
+          "x": "16",
+          "y": "319",
+          "zOrder": "4"
+        },
+        {
+          "ID": "7",
+          "measuredH": "10",
+          "measuredW": "100",
+          "typeID": "HRule",
+          "w": "2227",
+          "x": "16",
+          "y": "292",
+          "zOrder": "5"
+        },
+        {
+          "ID": "9",
+          "measuredH": "27",
+          "measuredW": "159",
+          "properties": {
+            "bold": "true",
+            "text": "Content-Type"
+          },
+          "typeID": "SubTitle",
+          "x": "790",
+          "y": "25",
+          "zOrder": "6"
+        },
+        {
+          "ID": "11",
+          "measuredH": "27",
+          "measuredW": "132",
+          "properties": {
+            "bold": "true",
+            "text": "Description"
+          },
+          "typeID": "SubTitle",
+          "x": "405",
+          "y": "25",
+          "zOrder": "7"
+        },
+        {
+          "ID": "12",
+          "measuredH": "27",
+          "measuredW": "100",
+          "properties": {
+            "bold": "true",
+            "text": "Endpoint"
+          },
+          "typeID": "SubTitle",
+          "x": "143",
+          "y": "25",
+          "zOrder": "8"
+        },
+        {
+          "ID": "13",
+          "measuredH": "27",
+          "measuredW": "86",
+          "properties": {
+            "bold": "true",
+            "text": "Method"
+          },
+          "typeID": "SubTitle",
+          "x": "16",
+          "y": "25",
+          "zOrder": "9"
+        },
+        {
+          "ID": "14",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "application/json"
+          },
+          "typeID": "Paragraph",
+          "w": "175",
+          "x": "790",
+          "y": "64",
+          "zOrder": "10"
+        },
+        {
+          "ID": "15",
+          "measuredH": "27",
+          "measuredW": "57",
+          "properties": {
+            "bold": "true",
+            "text": "Body"
+          },
+          "typeID": "SubTitle",
+          "x": "1022",
+          "y": "25",
+          "zOrder": "11"
+        },
+        {
+          "ID": "17",
+          "h": "156",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "{\"query\":\"{\\n  characters {\\n    id,name\\n  }\\n}\",\"variables\":null}"
+          },
+          "typeID": "Paragraph",
+          "w": "208",
+          "x": "1022",
+          "y": "62",
+          "zOrder": "12"
+        },
+        {
+          "ID": "18",
+          "measuredH": "27",
+          "measuredW": "166",
+          "properties": {
+            "bold": "true",
+            "text": "Response 200"
+          },
+          "typeID": "SubTitle",
+          "x": "1260",
+          "y": "25",
+          "zOrder": "13"
+        },
+        {
+          "ID": "20",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "{\"data\":{\"characters\":[]}}"
+          },
+          "typeID": "Paragraph",
+          "w": "275",
+          "x": "1260",
+          "y": "62",
+          "zOrder": "14"
+        },
+        {
+          "ID": "21",
+          "h": "235",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "The single endpoint to do everything graphql. This endpointed is protected by authentication, see below for auth."
+          },
+          "typeID": "Paragraph",
+          "w": "354",
+          "x": "405",
+          "y": "66",
+          "zOrder": "15"
+        },
+        {
+          "ID": "22",
+          "measuredH": "27",
+          "measuredW": "161",
+          "properties": {
+            "bold": "true",
+            "text": "Response 401"
+          },
+          "typeID": "SubTitle",
+          "x": "1595",
+          "y": "25",
+          "zOrder": "16"
+        },
+        {
+          "ID": "23",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "{\"error\":\"You must log in!\"}"
+          },
+          "typeID": "Paragraph",
+          "w": "293",
+          "x": "1595",
+          "y": "62",
+          "zOrder": "17"
+        },
+        {
+          "ID": "24",
+          "h": "187",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "italic": "false",
+            "size": "24",
+            "text": "On all environments except production, the user can access the GraphiQL interface to test graphql queries."
+          },
+          "typeID": "Paragraph",
+          "w": "338",
+          "x": "405",
+          "y": "319",
+          "zOrder": "18"
+        },
+        {
+          "ID": "25",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "document"
+          },
+          "typeID": "Paragraph",
+          "w": "121",
+          "x": "790",
+          "y": "315",
+          "zOrder": "19"
+        },
+        {
+          "ID": "26",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "45",
+          "x": "1022",
+          "y": "317",
+          "zOrder": "20"
+        },
+        {
+          "ID": "27",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "html to render page"
+          },
+          "typeID": "Paragraph",
+          "w": "232",
+          "x": "1260",
+          "y": "317",
+          "zOrder": "21"
+        },
+        {
+          "ID": "28",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "{\"error\":\"You must log in!\"}"
+          },
+          "typeID": "Paragraph",
+          "w": "293",
+          "x": "1595",
+          "y": "315",
+          "zOrder": "22"
+        },
+        {
+          "ID": "29",
+          "measuredH": "27",
+          "measuredW": "142",
+          "properties": {
+            "text": "/auth/google"
+          },
+          "typeID": "SubTitle",
+          "x": "128",
+          "y": "540",
+          "zOrder": "23"
+        },
+        {
+          "ID": "30",
+          "measuredH": "27",
+          "measuredW": "50",
+          "properties": {
+            "text": "GET"
+          },
+          "typeID": "SubTitle",
+          "x": "16",
+          "y": "540",
+          "zOrder": "24"
+        },
+        {
+          "ID": "31",
+          "measuredH": "10",
+          "measuredW": "100",
+          "typeID": "HRule",
+          "w": "2227",
+          "x": "16",
+          "y": "513",
+          "zOrder": "25"
+        },
+        {
+          "ID": "32",
+          "h": "378",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "italic": "false",
+            "size": "24",
+            "text": "This is the endpoint to begin the authentication flow. When the user hits this endpoint, they will be redirected to Google auth page so that they can choose what account they want to use in order to login into the app. The recomended integration on the frontend is to create a simple <a> element where the href is pointing to the endpoint."
+          },
+          "typeID": "Paragraph",
+          "w": "338",
+          "x": "405",
+          "y": "536",
+          "zOrder": "26"
+        },
+        {
+          "ID": "33",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "121",
+          "x": "790",
+          "y": "536",
+          "zOrder": "27"
+        },
+        {
+          "ID": "34",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "45",
+          "x": "1022",
+          "y": "538",
+          "zOrder": "28"
+        },
+        {
+          "ID": "35",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "232",
+          "x": "1260",
+          "y": "538",
+          "zOrder": "29"
+        },
+        {
+          "ID": "36",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "57",
+          "x": "1595",
+          "y": "536",
+          "zOrder": "30"
+        },
+        {
+          "ID": "37",
+          "measuredH": "27",
+          "measuredW": "166",
+          "properties": {
+            "bold": "true",
+            "text": "Response 302"
+          },
+          "typeID": "SubTitle",
+          "x": "1950",
+          "y": "25",
+          "zOrder": "31"
+        },
+        {
+          "ID": "38",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "57",
+          "x": "1950",
+          "y": "62",
+          "zOrder": "32"
+        },
+        {
+          "ID": "40",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "293",
+          "x": "1950",
+          "y": "315",
+          "zOrder": "33"
+        },
+        {
+          "ID": "41",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "redirect to Google"
+          },
+          "typeID": "Paragraph",
+          "w": "206",
+          "x": "1950",
+          "y": "536",
+          "zOrder": "34"
+        },
+        {
+          "ID": "42",
+          "measuredH": "27",
+          "measuredW": "242",
+          "properties": {
+            "text": "/auth/google/callback"
+          },
+          "typeID": "SubTitle",
+          "x": "128",
+          "y": "962",
+          "zOrder": "35"
+        },
+        {
+          "ID": "43",
+          "measuredH": "27",
+          "measuredW": "50",
+          "properties": {
+            "text": "GET"
+          },
+          "typeID": "SubTitle",
+          "x": "16",
+          "y": "962",
+          "zOrder": "36"
+        },
+        {
+          "ID": "44",
+          "measuredH": "10",
+          "measuredW": "100",
+          "typeID": "HRule",
+          "w": "2227",
+          "x": "16",
+          "y": "935",
+          "zOrder": "37"
+        },
+        {
+          "ID": "45",
+          "h": "303",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "italic": "false",
+            "size": "24",
+            "text": "This endpoint is only needed for the server. After the user has chosen on Google what account they want to use in order to authenticate, they will be redirected back to our servers with a code. This code is unique and necessary to make subsequent calls to Google to fetch user data."
+          },
+          "typeID": "Paragraph",
+          "w": "338",
+          "x": "405",
+          "y": "958",
+          "zOrder": "38"
+        },
+        {
+          "ID": "46",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "121",
+          "x": "790",
+          "y": "958",
+          "zOrder": "39"
+        },
+        {
+          "ID": "47",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "45",
+          "x": "1022",
+          "y": "960",
+          "zOrder": "40"
+        },
+        {
+          "ID": "48",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "232",
+          "x": "1260",
+          "y": "960",
+          "zOrder": "41"
+        },
+        {
+          "ID": "49",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "57",
+          "x": "1595",
+          "y": "958",
+          "zOrder": "42"
+        },
+        {
+          "ID": "50",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "redirect to app homepage"
+          },
+          "typeID": "Paragraph",
+          "w": "293",
+          "x": "1950",
+          "y": "958",
+          "zOrder": "43"
+        },
+        {
+          "ID": "51",
+          "measuredH": "27",
+          "measuredW": "134",
+          "properties": {
+            "text": "/auth/logout"
+          },
+          "typeID": "SubTitle",
+          "x": "128",
+          "y": "1317",
+          "zOrder": "44"
+        },
+        {
+          "ID": "52",
+          "measuredH": "27",
+          "measuredW": "50",
+          "properties": {
+            "text": "GET"
+          },
+          "typeID": "SubTitle",
+          "x": "16",
+          "y": "1317",
+          "zOrder": "45"
+        },
+        {
+          "ID": "53",
+          "measuredH": "10",
+          "measuredW": "100",
+          "typeID": "HRule",
+          "w": "2227",
+          "x": "16",
+          "y": "1290",
+          "zOrder": "46"
+        },
+        {
+          "ID": "54",
+          "h": "252",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "italic": "false",
+            "size": "24",
+            "text": "When the user accesses this endpoint, they will logout on the server and session cookie will be destroyed. The recomended integration on the frontend is to create a simple <a> element where the href is pointing to the endpoint."
+          },
+          "typeID": "Paragraph",
+          "w": "338",
+          "x": "405",
+          "y": "1313",
+          "zOrder": "47"
+        },
+        {
+          "ID": "55",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "121",
+          "x": "790",
+          "y": "1313",
+          "zOrder": "48"
+        },
+        {
+          "ID": "56",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "45",
+          "x": "1022",
+          "y": "1315",
+          "zOrder": "49"
+        },
+        {
+          "ID": "57",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "232",
+          "x": "1260",
+          "y": "1315",
+          "zOrder": "50"
+        },
+        {
+          "ID": "58",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "57",
+          "x": "1595",
+          "y": "1313",
+          "zOrder": "51"
+        },
+        {
+          "ID": "59",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "redirect to app homepage"
+          },
+          "typeID": "Paragraph",
+          "w": "293",
+          "x": "1950",
+          "y": "1313",
+          "zOrder": "52"
+        },
+        {
+          "ID": "60",
+          "measuredH": "27",
+          "measuredW": "102",
+          "properties": {
+            "text": "/api/user"
+          },
+          "typeID": "SubTitle",
+          "x": "128",
+          "y": "1619",
+          "zOrder": "53"
+        },
+        {
+          "ID": "61",
+          "measuredH": "27",
+          "measuredW": "50",
+          "properties": {
+            "text": "GET"
+          },
+          "typeID": "SubTitle",
+          "x": "16",
+          "y": "1619",
+          "zOrder": "54"
+        },
+        {
+          "ID": "62",
+          "measuredH": "10",
+          "measuredW": "100",
+          "typeID": "HRule",
+          "w": "2227",
+          "x": "16",
+          "y": "1592",
+          "zOrder": "55"
+        },
+        {
+          "ID": "63",
+          "h": "122",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "italic": "false",
+            "size": "24",
+            "text": "To fetch the authenticated user profile data"
+          },
+          "typeID": "Paragraph",
+          "w": "338",
+          "x": "405",
+          "y": "1615",
+          "zOrder": "56"
+        },
+        {
+          "ID": "65",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "45",
+          "x": "1022",
+          "y": "1617",
+          "zOrder": "57"
+        },
+        {
+          "ID": "66",
+          "h": "157",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "{\n  \"_id\": \"5cacec5b\",\n  \"googleId\": \"11840832\",\n  \"__v\": 0\n}"
+          },
+          "typeID": "Paragraph",
+          "w": "313",
+          "x": "1260",
+          "y": "1617",
+          "zOrder": "58"
+        },
+        {
+          "ID": "68",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "n/a"
+          },
+          "typeID": "Paragraph",
+          "w": "62",
+          "x": "1950",
+          "y": "1615",
+          "zOrder": "59"
+        },
+        {
+          "ID": "69",
+          "h": "31",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "application/json"
+          },
+          "typeID": "Paragraph",
+          "w": "175",
+          "x": "790",
+          "y": "1619",
+          "zOrder": "60"
+        },
+        {
+          "ID": "70",
+          "h": "34",
+          "measuredH": "80",
+          "measuredW": "275",
+          "properties": {
+            "size": "24",
+            "text": "{\"error\":\"You must log in!\"}"
+          },
+          "typeID": "Paragraph",
+          "w": "293",
+          "x": "1595",
+          "y": "1619",
+          "zOrder": "61"
+        }
+      ]
+    },
+    "measuredH": "1893",
+    "measuredW": "2274",
+    "mockupH": "1877",
+    "mockupW": "2271",
+    "version": "1.0"
+  }
+}

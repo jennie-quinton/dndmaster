@@ -1,39 +1,68 @@
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const mongoose = require('mongoose');
 const keys = require('../config/keys');
-
+const mongoose = require('mongoose');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const passportJWT = require('passport-jwt');
+const JWTStrategy = passportJWT.Strategy;
+const ExtractJWT = passportJWT.ExtractJwt;
 const User = mongoose.model('users');
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser((id, done) => {
-  User.findById(id).then(user => done(null, user));
-});
-
 passport.use(
-  new GoogleStrategy(
+  new LocalStrategy(
     {
-      clientID: keys.googleClientID,
-      clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback',
-      proxy: true
+      usernameField: 'email',
+      passwordField: 'password'
     },
-    async (accessToken, refreshToken, profile, done) => {
-      try {
-        const existingUser = await User.findOne({ googleId: profile.id });
-
-        if (existingUser) {
-          return done(null, existingUser);
+    function(email, password, done) {
+      User.findOne({ email }, function(error, user) {
+        if (error) {
+          return done(error);
         }
 
-        const user = await new User({ googleId: profile.id }).save();
-        done(null, user);
-      } catch (error) {
-        done(error, null);
-      }
+        if (!user) {
+          return done(null, false, {
+            errorCode: 'INVALID_CREDENTIALS',
+            message: 'Incorrect email or password.'
+          });
+        }
+
+        user.comparePassword(password, function(error, isMatch) {
+          if (error) {
+            return done(null, false, {
+              errorCode: 'INVALID_CREDENTIALS',
+              message: 'Incorrect email or password.'
+            });
+          }
+
+          if (!isMatch) {
+            return done(null, false, {
+              errorCode: 'INVALID_CREDENTIALS',
+              message: 'Incorrect email or password.'
+            });
+          }
+
+          return done(null, user, { message: 'Logged In Successfully' });
+        });
+      });
+    }
+  )
+);
+
+passport.use(
+  new JWTStrategy(
+    {
+      jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+      secretOrKey: keys.jwtSecret
+    },
+    function(jwtPayload, done) {
+      // find the user in db if needed. This functionality may be omitted if you store everything you'll need in JWT payload.
+      User.findById(jwtPayload._id)
+        .then(user => {
+          return done(null, user);
+        })
+        .catch(error => {
+          return done(error, null);
+        });
     }
   )
 );
