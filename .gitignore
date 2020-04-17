@@ -1,6 +1,2 @@
-/client/node_modules
 node_modules/*
 config/dev.js
-/client/.next
-/client/out
-/client/dist
