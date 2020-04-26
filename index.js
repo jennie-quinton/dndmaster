@@ -35,6 +35,17 @@ app.use(
   })
 );
 
+if (process.env.NODE_ENV !== 'production') {
+  app.use(
+    '/graphql',
+    passport.authenticate('basic', { session: false }),
+    expressGraphQL({
+      schema,
+      graphiql: true,
+    })
+  );
+}
+
 // Enable pre-flight request for all routes
 app.options('*', cors());
 
