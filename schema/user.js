@@ -8,8 +8,8 @@ const UserType = new GraphQLObjectType({
   name: 'User',
   fields: () => ({
     id: { type: GraphQLString },
-    email: { type: GraphQLString }
-  })
+    email: { type: GraphQLString },
+  }),
 });
 
 const queries = {
@@ -18,8 +18,8 @@ const queries = {
     args: {},
     resolve(parentValue, args, request) {
       return User.findById(request.user.id);
-    }
-  }
+    },
+  },
 };
 
 const mutations = {};

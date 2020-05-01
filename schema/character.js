@@ -1,14 +1,12 @@
 const graphql = require('graphql');
-const graphqlIsoDate = require('graphql-iso-date')
+const graphqlIsoDate = require('graphql-iso-date');
 const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLList,
-  GraphQLInt,
-  GraphQLNonNull
+  GraphQLNonNull,
 } = graphql;
-const { GraphQLDateTime } = graphqlIsoDate
-
+const { GraphQLDateTime } = graphqlIsoDate;
 
 const mongoose = require('mongoose');
 const Character = mongoose.model('characters');
@@ -18,11 +16,11 @@ const CharacterType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLString },
     name: { type: GraphQLString },
-    initiative: { type: GraphQLInt },
     race: { type: GraphQLString },
     class: { type: GraphQLString },
-    dateCreated: { type: GraphQLDateTime }
-  })
+    createdAt: { type: GraphQLDateTime },
+    updatedAt: { type: GraphQLDateTime },
+  }),
 });
 
 const CharacterList = new GraphQLList(CharacterType);
@@ -31,10 +29,10 @@ const queries = {
   characters: {
     type: CharacterList,
     args: {},
-    resolve(parentValue, args, request) {    
-      return Character.find({  _user: request.user.id });
-    }
-  }
+    resolve(parentValue, args, request) {
+      return Character.find({ _user: request.user.id });
+    },
+  },
 };
 
 const mutations = {
@@ -42,27 +40,20 @@ const mutations = {
     type: CharacterType,
     args: {
       name: { type: new GraphQLNonNull(GraphQLString) },
-      initiative: { type: new GraphQLNonNull(GraphQLInt) },
       race: { type: new GraphQLNonNull(GraphQLString) },
-      class: { type: new GraphQLNonNull(GraphQLString) }
+      class: { type: new GraphQLNonNull(GraphQLString) },
     },
-    resolve(
-      parentValue,
-      { name, initiative, race, class: className },
-      request
-    ) {
+    resolve(parentValue, { name, race, class: className }, req) {
       const character = new Character({
         name,
-        initiative,
         race,
         class: className,
-        _user: request.user.id,
-        dateCreated: Date.now()
+        _user: req.user.id,
       });
 
       return character.save();
-    }
-  }
+    },
+  },
 };
 
 module.exports = { mutations, queries };
