@@ -16,6 +16,6 @@ module.exports = {
     return character.save();
   },
   remove: (characterId, userId) => {
-    return Character.findOneAndRemove({ _id: characterId, _user: userId });
+    return Character.deleteOne({ _id: characterId, _user: userId });
   },
 };
