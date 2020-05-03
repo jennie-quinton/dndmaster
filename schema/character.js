@@ -5,16 +5,15 @@ const {
   GraphQLString,
   GraphQLList,
   GraphQLNonNull,
+  GraphQLID,
 } = graphql;
 const { GraphQLDateTime } = graphqlIsoDate;
-
-const mongoose = require('mongoose');
-const Character = mongoose.model('characters');
+const CharacterController = require('../controllers/CharacterController');
 
 const CharacterType = new GraphQLObjectType({
   name: 'Character',
   fields: () => ({
-    id: { type: GraphQLString },
+    id: { type: GraphQLID },
     name: { type: GraphQLString },
     race: { type: GraphQLString },
     class: { type: GraphQLString },
@@ -23,14 +22,12 @@ const CharacterType = new GraphQLObjectType({
   }),
 });
 
-const CharacterList = new GraphQLList(CharacterType);
-
 const queries = {
   characters: {
-    type: CharacterList,
+    type: new GraphQLList(CharacterType),
     args: {},
-    resolve(parentValue, args, request) {
-      return Character.find({ _user: request.user.id });
+    resolve(parentValue, args, req) {
+      return CharacterController.getAllByUserId(req.user.id);
     },
   },
 };
@@ -44,14 +41,14 @@ const mutations = {
       class: { type: new GraphQLNonNull(GraphQLString) },
     },
     resolve(parentValue, { name, race, class: className }, req) {
-      const character = new Character({
-        name,
-        race,
-        class: className,
-        _user: req.user.id,
-      });
-
-      return character.save();
+      return CharacterController.create({ name, race, className }, req.user.id);
+    },
+  },
+  removeCharacter: {
+    type: CharacterType,
+    args: { id: { type: GraphQLID } },
+    resolve(parentValue, { id }, req) {
+      return CharacterController.remove(id, req.user.id);
     },
   },
 };

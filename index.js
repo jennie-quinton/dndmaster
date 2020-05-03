@@ -54,7 +54,7 @@ const auth = require('./routes/auth');
 
 app.use('/auth', auth);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5500;
 app.listen(PORT);
 console.log('NODE_ENV:', process.env.NODE_ENV || 'development');
 console.log('LISTENING TO PORT:', PORT);
