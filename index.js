@@ -52,8 +52,10 @@ app.options('*', cors());
 
 /** Set up custom routes */
 const auth = require('./routes/auth');
+const webhook = require('./routes/webhook');
 
 app.use('/auth', auth);
+app.use('/api/webhook', webhook);
 
 const PORT = process.env.PORT || 5500;
 app.listen(PORT);
