@@ -12,7 +12,7 @@ const { GraphQLDateTime } = graphqlIsoDate;
 const CharacterController = require('../controllers/CharacterController');
 
 const RaceEnumType = new GraphQLEnumType({
-  name: 'Race',
+  name: 'RaceEnum',
   description: `Every character belongs to a race,
     one of the many humanoid species in D&D.
     The most common player character races are dwarves,
@@ -33,7 +33,7 @@ const RaceEnumType = new GraphQLEnumType({
 });
 
 const ClassEnumType = new GraphQLEnumType({
-  name: 'Class',
+  name: 'ClassEnum',
   description: `Every adventurer is a member of a character class.
     Class broadly describes a character’s vocation special
     talents, and the tactics the character is most likely

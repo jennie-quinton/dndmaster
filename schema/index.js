@@ -8,6 +8,8 @@ const {
   mutations: characterMutations,
 } = require('./character');
 const { queries: userQueries } = require('./user');
+const { queries: raceQueries } = require('./race');
+const { queries: classQueries } = require('./class');
 
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
@@ -21,6 +23,8 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     ...characterQueries,
     ...userQueries,
+    ...raceQueries,
+    ...classQueries,
   },
 });
 
