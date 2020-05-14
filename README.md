@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Node: 8.11.1
+- Node: 12.13.1
 - Dev Keys: Can be requested from Jordan
 
 ### Installing
@@ -26,39 +26,16 @@ npm install
 npm run server
 ```
 
-### Client
-
-To create the index.html file for production run
-
-```
-$ cd client
-$ npm run build
-```
-
-This will create the index.html file in the `client/dist` folder.
-
-To run the client locally run
-
-```
-$ cd client
-$ npm run dev
-```
-
 ## Deployment
 
 The following process is high level understanding of updating the server.
 
 - The code pushed to `master` branch will also be pushed to Heroku (simultaneously when configured or manually for first deployment).
 - Heroku installs server depedencies.
-- Heroku runs `heroku-postbuild` after server dependencies are installed.
-  - Important step to install client dependencies
-  - And creating the static site `npm run export`
 
 ### Server Configuration
 
 The `engines` property is responsible in the `package.json` is used to determine the version of `node` and `npm`.
-
-`NPM_CONFIG_PRODUCTION=false` in `heroku-postbuild` installs the dev dependecies along with the rest of the dependencies.
 
 ### First Time Deployment
 

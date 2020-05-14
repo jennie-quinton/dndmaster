@@ -1,16 +1,51 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const characterSchema = new Schema({
-  name: String,
-  initiative: Number,
-  race: String,
-  class: String,
-  _user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+const characterSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    race: {
+      type: String,
+      required: true,
+      enum: [
+        'dragonborn',
+        'dwarf',
+        'elf',
+        'gnome',
+        'halfElf',
+        'halfling',
+        'halfOrc',
+        'human',
+        'tiefling',
+      ],
+    },
+    class: {
+      type: String,
+      required: true,
+      enum: [
+        'barbarian',
+        'bard',
+        'cleric',
+        'druid',
+        'fighter',
+        'monk',
+        'paladin',
+        'ranger',
+        'rogue',
+        'sorcerer',
+        'warlock',
+        'wizard',
+      ],
+    },
+    _user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
   },
-  dateCreated: Date
-});
+  { timestamps: true }
+);
 
 mongoose.model('characters', characterSchema);

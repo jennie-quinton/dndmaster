@@ -16,6 +16,7 @@ require('./services/passport');
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
 });
 
 const app = express();
@@ -51,10 +52,12 @@ app.options('*', cors());
 
 /** Set up custom routes */
 const auth = require('./routes/auth');
+const webhook = require('./routes/webhook');
 
 app.use('/auth', auth);
+app.use('/api/webhook', webhook);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5500;
 app.listen(PORT);
 console.log('NODE_ENV:', process.env.NODE_ENV || 'development');
 console.log('LISTENING TO PORT:', PORT);
