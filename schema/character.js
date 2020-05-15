@@ -10,6 +10,8 @@ const {
 } = graphql;
 const { GraphQLDateTime } = graphqlIsoDate;
 const CharacterController = require('../controllers/CharacterController');
+const { TYPES: CLASS_TYPES } = require('./class');
+const { TYPES: RACE_TYPES } = require('./race');
 
 const RaceEnumType = new GraphQLEnumType({
   name: 'RaceEnum',
@@ -19,17 +21,11 @@ const RaceEnumType = new GraphQLEnumType({
     elves, halflings, and humans.
     Your character’s race grants particular racial traits,
     such as special senses.`,
-  values: {
-    dragonborn: { value: 'dragonborn' },
-    dwarf: { value: 'dwarf' },
-    elf: { value: 'elf' },
-    gnome: { value: 'gnome' },
-    halfElf: { value: 'halfElf' },
-    halfling: { value: 'halfling' },
-    halfOrc: { value: 'halfOrc' },
-    human: { value: 'human' },
-    tiefling: { value: 'tiefling' },
-  },
+  values: RACE_TYPES.map(({ value }) => value).reduce((object, item) => {
+    object[item] = { value: item };
+
+    return object;
+  }, {}),
 });
 
 const ClassEnumType = new GraphQLEnumType({
@@ -40,20 +36,11 @@ const ClassEnumType = new GraphQLEnumType({
     to employ when exploring a dungeon, fighting monsters,
     or engaging in a tense negotiation. Your character receives
     many benefits from your choice of class.`,
-  values: {
-    barbarian: { value: 'barbarian' },
-    bard: { value: 'bard' },
-    cleric: { value: 'cleric' },
-    druid: { value: 'druid' },
-    fighter: { value: 'fighter' },
-    monk: { value: 'monk' },
-    paladin: { value: 'paladin' },
-    ranger: { value: 'ranger' },
-    rogue: { value: 'rogue' },
-    sorcerer: { value: 'sorcerer' },
-    warlock: { value: 'warlock' },
-    wizard: { value: 'wizard' },
-  },
+  values: CLASS_TYPES.map(({ value }) => value).reduce((object, item) => {
+    object[item] = { value: item };
+
+    return object;
+  }, {}),
 });
 
 const CharacterType = new GraphQLObjectType({

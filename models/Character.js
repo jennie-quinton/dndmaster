@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const { TYPES: CLASS_TYPES } = require('../schema/class');
+const { TYPES: RACE_TYPES } = require('../schema/race');
 
 const characterSchema = new Schema(
   {
@@ -10,35 +12,12 @@ const characterSchema = new Schema(
     race: {
       type: String,
       required: true,
-      enum: [
-        'dragonborn',
-        'dwarf',
-        'elf',
-        'gnome',
-        'halfElf',
-        'halfling',
-        'halfOrc',
-        'human',
-        'tiefling',
-      ],
+      enum: RACE_TYPES.map(({ value }) => value),
     },
     class: {
       type: String,
       required: true,
-      enum: [
-        'barbarian',
-        'bard',
-        'cleric',
-        'druid',
-        'fighter',
-        'monk',
-        'paladin',
-        'ranger',
-        'rogue',
-        'sorcerer',
-        'warlock',
-        'wizard',
-      ],
+      enum: CLASS_TYPES.map(({ value }) => value),
     },
     _user: {
       type: Schema.Types.ObjectId,
