@@ -31,6 +31,7 @@
     "express-graphql": "^0.9.0",
     "graphql": "^14.6.0",
     "graphql-iso-date": "^3.6.1",
+    "graphql-voyager": "^1.0.0-rc.31",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.3",
     "mongoose-unique-validator": "^2.0.3",

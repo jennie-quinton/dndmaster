@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 const expressGraphQL = require('express-graphql');
 const { altairExpress } = require('altair-express-middleware');
+const { express: voyagerMiddleware } = require('graphql-voyager/middleware');
 
 /** Mongoose models */
 require('./models/Character');
@@ -53,6 +54,12 @@ if (process.env.NODE_ENV !== 'production') {
     altairExpress({
       endpointURL: '/graphql',
     })
+  );
+
+  app.use(
+    '/voyager',
+    passport.authenticate('basic', { session: false }),
+    voyagerMiddleware({ endpointUrl: '/graphql' })
   );
 }
 
