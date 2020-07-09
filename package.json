@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/jennie-quinton/dndmaster#readme",
   "dependencies": {
+    "altair-express-middleware": "^2.4.11",
     "axios": "^0.19.2",
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",

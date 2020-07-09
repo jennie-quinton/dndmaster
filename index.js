@@ -5,6 +5,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 const expressGraphQL = require('express-graphql');
+const { altairExpress } = require('altair-express-middleware');
 
 /** Mongoose models */
 require('./models/Character');
@@ -43,6 +44,14 @@ if (process.env.NODE_ENV !== 'production') {
     expressGraphQL({
       schema,
       graphiql: true,
+    })
+  );
+
+  app.use(
+    '/altair',
+    passport.authenticate('basic', { session: false }),
+    altairExpress({
+      endpointURL: '/graphql',
     })
   );
 }
